@@ -4,15 +4,15 @@
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
-				<title>Title</title>
+				<title>3D-VIER-GEWINNT</title>
 				<author>Uwe Weiss</author>
-				<principal>Principal</principal>
+				<principal>Torsten Roeder</principal>
 			</titleStmt>
 			<publicationStmt>
 				<p>Publication Information</p>
 			</publicationStmt>
 			<sourceDesc>
-				<p>https://www.64er-magazin.de/8412/3d_viergewinnt.html</p>
+				<bibl>https://www.64er-magazin.de/8412/3d_viergewinnt.html</bibl>
 			</sourceDesc>
 		</fileDesc>
 	</teiHeader>
@@ -31,14 +31,14 @@
 <l><num>20</num> <s><w>REM</w>        * TEL 0201/326366 *</s></l>
 <l><num>21</num> <s><w>REM</w>        *                 *</s></l>
 <l><num>22</num> <s><w>REM</w>        *******************</s></l>
-<l><num>23</num> <s></s>:</l>
-<l><num>24</num> <s></s>:</l>
-<l><num>25</num> <s></s>:</l>
-<l><num>26</num> <s></s>:</l>
-<l><num>27</num> <s></s>:</l>
-<l><num>28</num> <s></s>:</l>
-<l><num>29</num> <s></s>:</l>
-<l><num>30</num> <s></s>:</l>
+<l><num>23</num> <pc>:</pc></l>
+<l><num>24</num> <pc>:</pc></l>
+<l><num>25</num> <pc>:</pc></l>
+<l><num>26</num> <pc>:</pc></l>
+<l><num>27</num> <pc>:</pc></l>
+<l><num>28</num> <pc>:</pc></l>
+<l><num>29</num> <pc>:</pc></l>
+<l><num>30</num> <pc>:</pc></l>
 <l><num>100</num> <s><w>GOSUB</w>1500</s><pc>:</pc><s><w>REM</w> </s><s>INITIALISIERUNG</s></l>
 <l><num>110</num> <s>ZG=0</s><pc>:</pc><s>PL=3</s><pc>:</pc><s>GW=0</s></l>
 <l><num>120</num> <s>PL=5-PL</s><pc>:</pc><s>ZG=ZG+1</s></l>

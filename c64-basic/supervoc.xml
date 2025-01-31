@@ -5,12 +5,13 @@
 		<fileDesc>
 			<titleStmt>
 				<title>Title</title>
+				<principal>Torsten Roeder</principal>
 			</titleStmt>
 			<publicationStmt>
 				<p>Publication Information</p>
 			</publicationStmt>
 			<sourceDesc>
-				<p>https://www.64er-magazin.de/8406/supervoc.html</p>
+				<bibl>https://www.64er-magazin.de/8406/supervoc.html</bibl>
 			</sourceDesc>
 		</fileDesc>
 	</teiHeader>

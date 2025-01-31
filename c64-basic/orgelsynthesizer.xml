@@ -4,13 +4,15 @@
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
-				<title>Title</title>
+				<title>Orgelsynthesizer</title>
+				<author>christian gebauer</author>
+				<principal>Torsten Roeder</principal>
 			</titleStmt>
 			<publicationStmt>
 				<p>Publication Information</p>
 			</publicationStmt>
 			<sourceDesc>
-				<p>https://www.64er-magazin.de/8409/elektronenorgel.html</p>
+				<bibl>https://www.64er-magazin.de/8409/elektronenorgel.html</bibl>
 			</sourceDesc>
 		</fileDesc>
 	</teiHeader>
@@ -24,12 +26,12 @@
 <l><num>5</num> <s><w>rem</w>"   BB      CCCCCCCCCCC      BB</s></l>
 <l><num>6</num> <s><w>rem</w>"    B        CCCCCCC        B</s></l>
 <l><num>7</num> <s><w>rem</w>"               CCC</s></l>
-<l><num>9</num> <s></s>:</l>
+<l><num>9</num> <pc>:</pc></l>
 <l><num>10</num> <s><w>rem</w>        christian gebauer</s></l>
 <l><num>11</num> <s><w>rem</w>        6350 bad nauheim</s></l>
 <l><num>12</num> <s><w>rem</w>           april 1983</s></l>
 <l><num>13</num> <s><w>rem</w>      verbessert im juli '83</s></l>
-<l><num>15</num> <s></s>:</l>
+<l><num>15</num> <pc>:</pc></l>
 <l><num>19</num> <s><w>rem</w></s></l>
 <l><num>20</num> <s><w>rem</w>        --- variablen ---</s></l>
 <l><num>25</num> <s><w>rem</w></s></l>
@@ -82,32 +84,32 @@
 <l><num>76</num> <s><w>rem</w> mb$()  buchstaben des manuals</s></l>
 <l><num>77</num> <s><w>rem</w></s></l>
 <l><num>80</num> <s><w>rem</w> i,j,s$ hilfsvariablen</s></l>
-<l><num>90</num> <s></s>:</l>
+<l><num>90</num> <pc>:</pc></l>
 <l><num>100</num> <s><w>rem</w>"         CCCCCCCCCC</s></l>
 <l><num>101</num> <s><w>rem</w>"        UCCCCCCCCCCI</s></l>
 <l><num>102</num> <s><w>rem</w>"        B vorspann B</s></l>
 <l><num>103</num> <s><w>rem</w>"        JCCCCCCCCCCK</s></l>
 <l><num>104</num> <s><w>rem</w>"         CCCCCCCCCC</s></l>
-<l><num>110</num> <s></s>:</l>
+<l><num>110</num> <pc>:</pc></l>
 <l><num>120</num> <s><w>print</w>"{lblu}";chr$(142);chr$(8)</s><pc>:</pc><s><w>poke</w> </s><s>650,0</s><pc>:</pc><s><w>poke</w> </s><s>53280,14</s><pc>:</pc><s><w>poke</w> </s><s>53281,6</s></l>
 <l><num>130</num> <s><w>print</w>"{clr}{down}"</s></l>
-<l><num>140</num> <s></s>:</l>
+<l><num>140</num> <pc>:</pc></l>
 <l><num>150</num> <s>iz=10</s><pc>:</pc><s>mz=111</s><pc>:</pc><s>tz=33</s><pc>:</pc><s>l=10</s></l>
 <l><num>160</num> <s>dim m1%(mz),m2%(mz)</s></l>
 <l><num>170</num> <s>dim i$(iz),ib$(iz,7),i1(iz),i2(iz),i3(iz),i4(iz),i5(iz),ih(iz),io(iz)</s></l>
 <l><num>180</num> <s>dim t%(tz),md$(40),mb$(40)</s></l>
-<l><num>190</num> <s></s>:</l>
+<l><num>190</num> <pc>:</pc></l>
 <l><num>200</num> <s><w>rem</w>     -------------------</s></l>
 <l><num>201</num> <s><w>rem</w>     --- instrumente ---</s></l>
 <l><num>202</num> <s><w>rem</w>     -------------------</s></l>
-<l><num>210</num> <s></s>:</l>
+<l><num>210</num> <pc>:</pc></l>
 <l><num>220</num> <s>for i=0 to iz</s></l>
 <l><num>240</num> <s>read i$(i),i1(i),i2(i),i3(i),i4(i),i5(i),ih(i),io</s><pc>:</pc><s>io(i)=14*io</s></l>
 <l><num>250</num> <s>for j=1 to 7</s></l>
 <l><num>260</num> <s>read ib$(i,j)</s></l>
 <l><num>270</num> <s>next j</s></l>
 <l><num>280</num> <s>next i</s></l>
-<l><num>290</num> <s></s>:</l>
+<l><num>290</num> <pc>:</pc></l>
 <l><num>300</num> <s>data       piano</s></l>
 <l><num>305</num> <s>data 65,9,0,0,202</s></l>
 <l><num>307</num> <s>data 3,3</s></l>
@@ -118,7 +120,7 @@
 <l><num>314</num> <s>data " L{CBM-P}{CBM-P}{CBM-P}{CBM-P}{CBM-P}{CBM-P}{SHIFT-@} "</s></l>
 <l><num>315</num> <s>data " {CBM-L}      {CBM-J} "</s></l>
 <l><num>316</num> <s>data " {CBM-C}      {CBM-V} "</s></l>
-<l><num>320</num> <s></s>:</l>
+<l><num>320</num> <pc>:</pc></l>
 <l><num>330</num> <s>data    roehrengong</s></l>
 <l><num>335</num> <s>data 65,11,0,0,200</s></l>
 <l><num>337</num> <s>data 3,3</s></l>
@@ -129,7 +131,7 @@
 <l><num>344</num> <s>data "HGHGHGM   "</s></l>
 <l><num>345</num> <s>data "HGHG   M  "</s></l>
 <l><num>346</num> <s>data "HG      M "</s></l>
-<l><num>350</num> <s></s>:</l>
+<l><num>350</num> <pc>:</pc></l>
 <l><num>360</num> <s>data    metallophon</s></l>
 <l><num>365</num> <s>data 17,10,0,0,0</s></l>
 <l><num>367</num> <s>data 3,4</s></l>
@@ -140,7 +142,7 @@
 <l><num>374</num> <s>data "  {CBM-K}{CBM-K}{CBM-V} N   "</s></l>
 <l><num>375</num> <s>data "  {CBM-V}CCNCQ  "</s></l>
 <l><num>376</num> <s>data "    N     "</s></l>
-<l><num>380</num> <s></s>:</l>
+<l><num>380</num> <pc>:</pc></l>
 <l><num>390</num> <s>data     xylophon</s></l>
 <l><num>395</num> <s>data 17,5,0,0,0</s></l>
 <l><num>397</num> <s>data 3,4</s></l>
@@ -151,7 +153,7 @@
 <l><num>404</num> <s>data " BBBBJKN  "</s></l>
 <l><num>405</num> <s>data " BBJQCNCC "</s></l>
 <l><num>406</num> <s>data " JK  Q    "</s></l>
-<l><num>410</num> <s></s>:</l>
+<l><num>410</num> <pc>:</pc></l>
 <l><num>420</num> <s>data      glocke</s></l>
 <l><num>425</num> <s>data 17,13,0,0,0</s></l>
 <l><num>427</num> <s>data 3,4</s></l>
@@ -162,7 +164,7 @@
 <l><num>434</num> <s>data " {CBM-M}N  QM{CBM-G}  "</s></l>
 <l><num>435</num> <s>data "  M{CBM-@}{CBM-@}{CBM-@}N   "</s></l>
 <l><num>436</num> <s>data "          "</s></l>
-<l><num>440</num> <s></s>:</l>
+<l><num>440</num> <pc>:</pc></l>
 <l><num>450</num> <s>data     glasorgel</s></l>
 <l><num>455</num> <s>data 17,170,0,0,0</s></l>
 <l><num>457</num> <s>data 3,4</s></l>
@@ -173,7 +175,7 @@
 <l><num>464</num> <s>data "    B     "</s></l>
 <l><num>465</num> <s>data "   ({CBM-@})    "</s></l>
 <l><num>466</num> <s>data "          "</s></l>
-<l><num>470</num> <s></s>:</l>
+<l><num>470</num> <pc>:</pc></l>
 <l><num>480</num> <s>data     violine</s></l>
 <l><num>485</num> <s>data 65,170,202,250,0</s></l>
 <l><num>487</num> <s>data 1,3</s></l>
@@ -184,7 +186,7 @@
 <l><num>494</num> <s>data "   >)(&lt;   "</s></l>
 <l><num>495</num> <s>data "   {CBM-G}YT{CBM-M}   "</s></l>
 <l><num>496</num> <s>data "   M{CBM-@}{CBM-@}NM  "</s></l>
-<l><num>500</num> <s></s>:</l>
+<l><num>500</num> <pc>:</pc></l>
 <l><num>510</num> <s>data     troete</s></l>
 <l><num>515</num> <s>data 33,90,228,0,0</s></l>
 <l><num>517</num> <s>data 1,3</s></l>
@@ -195,7 +197,7 @@
 <l><num>524</num> <s>data "  M{CBM-P}{CBM-P}N  M "</s></l>
 <l><num>525</num> <s>data "          "</s></l>
 <l><num>526</num> <s>data "      {$a0}{$a0}{$a0} "</s></l>
-<l><num>530</num> <s></s>:</l>
+<l><num>530</num> <pc>:</pc></l>
 <l><num>540</num> <s>data   panfloete</s></l>
 <l><num>545</num> <s>data 17,102,197,0,0</s></l>
 <l><num>547</num> <s>data 1,4</s></l>
@@ -206,7 +208,7 @@
 <l><num>554</num> <s>data "  {CBM-K}{CBM-K}      "</s></l>
 <l><num>555</num> <s>data "  {CBM-K}       "</s></l>
 <l><num>556</num> <s>data "          "</s></l>
-<l><num>560</num> <s></s>:</l>
+<l><num>560</num> <pc>:</pc></l>
 <l><num>570</num> <s>data   klarinette</s></l>
 <l><num>575</num> <s>data 65,105,197,0,100</s></l>
 <l><num>577</num> <s>data 1,2</s></l>
@@ -217,7 +219,7 @@
 <l><num>584</num> <s>data "    MN{CBM-Y}M  "</s></l>
 <l><num>585</num> <s>data "     {CBM-H} {CBM-N}  "</s></l>
 <l><num>586</num> <s>data "     M{CBM-P}N  "</s></l>
-<l><num>590</num> <s></s>:</l>
+<l><num>590</num> <pc>:</pc></l>
 <l><num>600</num> <s>data     harfe</s></l>
 <l><num>605</num> <s>data 17,44,0,0,6</s></l>
 <l><num>607</num> <s>data 3,3</s></l>
@@ -228,76 +230,76 @@
 <l><num>614</num> <s>data " {CBM-M}  MNN   "</s></l>
 <l><num>615</num> <s>data "  B NN    "</s></l>
 <l><num>616</num> <s>data "   NN     "</s></l>
-<l><num>900</num> <s></s>:</l>
+<l><num>900</num> <pc>:</pc></l>
 <l><num>1000</num> <s><w>rem</w>    --------------------</s></l>
 <l><num>1001</num> <s><w>rem</w>    --- tonparameter ---</s></l>
 <l><num>1002</num> <s><w>rem</w>    --------------------</s></l>
-<l><num>1010</num> <s></s>:</l>
+<l><num>1010</num> <pc>:</pc></l>
 <l><num>1020</num> <s>for i=1 to mz</s></l>
 <l><num>1030</num> <s>read m2%(i),m1%(i)</s></l>
 <l><num>1040</num> <s>next i</s></l>
-<l><num>1050</num> <s></s>:</l>
+<l><num>1050</num> <pc>:</pc></l>
 <l><num>1060</num> <s>data 1,4,,</s></l>
-<l><num>1065</num> <s></s>:</l>
+<l><num>1065</num> <pc>:</pc></l>
 <l><num>1070</num> <s>data 1,22,1,39,1,57,1,75,1,95,,,1,116,1,138,1,161,1,186,1,212</s></l>
 <l><num>1080</num> <s>data 1,240,2,14,,</s></l>
-<l><num>1085</num> <s></s>:</l>
+<l><num>1085</num> <pc>:</pc></l>
 <l><num>1090</num> <s>data 2,45,2,78,2,113,2,150,2,190,,,2,231,3,20,3,66,3,116,3,169</s></l>
 <l><num>1100</num> <s>data 3,224,4,27,,</s></l>
-<l><num>1105</num> <s></s>:</l>
+<l><num>1105</num> <pc>:</pc></l>
 <l><num>1110</num> <s>data 4,90,4,156,4,226,5,45,5,123,,,5,207,6,39,6,133,6,232,7,81</s></l>
 <l><num>1120</num> <s>data 7,193,8,55,,</s></l>
-<l><num>1125</num> <s></s>:</l>
+<l><num>1125</num> <pc>:</pc></l>
 <l><num>1130</num> <s>data 8,180,9,56,9,196,10,89,10,247,,,11,158,12,78,13,10,13,208</s></l>
 <l><num>1140</num> <s>data 14,162,15,129,16,109,,</s></l>
-<l><num>1145</num> <s></s>:</l>
+<l><num>1145</num> <pc>:</pc></l>
 <l><num>1150</num> <s>data 17,103,18,112,19,137,20,178,21,237,,,23,59,24,157,26,20,27,160</s></l>
 <l><num>1160</num> <s>data 29,69,31,3,32,219,,</s></l>
-<l><num>1165</num> <s></s>:</l>
+<l><num>1165</num> <pc>:</pc></l>
 <l><num>1170</num> <s>data 34,207,36,225,39,18,41,101,43,219,,,46,118,49,58,52,39,55,65</s></l>
 <l><num>1180</num> <s>data 58,138,62,5,65,181,,</s></l>
-<l><num>1185</num> <s></s>:</l>
+<l><num>1185</num> <pc>:</pc></l>
 <l><num>1190</num> <s>data 69,157,73,193,78,36,82,201,87,182,,,92,237,98,115,104,78,110,130</s></l>
 <l><num>1200</num> <s>data 117,20,124,10,131,106,,</s></l>
-<l><num>1205</num> <s></s>:</l>
+<l><num>1205</num> <pc>:</pc></l>
 <l><num>1210</num> <s>data 139,59,147,130,156,72,165,147,175,107,,,185,218,196,231</s></l>
 <l><num>1220</num> <s>data 208,156,221,4,234,40</s></l>
-<l><num>1300</num> <s></s>:</l>
+<l><num>1300</num> <pc>:</pc></l>
 <l><num>1500</num> <s><w>rem</w>    -------------------------</s></l>
 <l><num>1501</num> <s><w>rem</w>    --- data fuer tasten- ---</s></l>
 <l><num>1502</num> <s><w>rem</w>    ---  ton - zuordnung  ---</s></l>
 <l><num>1503</num> <s><w>rem</w>    -------------------------</s></l>
-<l><num>1510</num> <s></s>:</l>
+<l><num>1510</num> <pc>:</pc></l>
 <l><num>1520</num> <s>for i=0 to 33</s></l>
 <l><num>1530</num> <s>read t%(i)</s></l>
 <l><num>1540</num> <s>next i</s></l>
 <l><num>1560</num> <s>data 23,20,22,,24,,,21,2,,,6,5,8,10,12,15,14,16,18,,</s></l>
 <l><num>1570</num> <s>data 17,19,1,7,4,9,13,,3,,11,</s></l>
-<l><num>1590</num> <s></s>:</l>
+<l><num>1590</num> <pc>:</pc></l>
 <l><num>2000</num> <s><w>rem</w>    ------------------</s></l>
 <l><num>2001</num> <s><w>rem</w>    --- manualdata ---</s></l>
 <l><num>2002</num> <s><w>rem</w>    ------------------</s></l>
-<l><num>2010</num> <s></s>:</l>
+<l><num>2010</num> <pc>:</pc></l>
 <l><num>2020</num> <s>for i=1 to 14</s></l>
 <l><num>2030</num> <s>read md$(i)</s></l>
 <l><num>2040</num> <s>next</s></l>
 <l><num>2050</num> <s>for i=15 to 40</s></l>
 <l><num>2060</num> <s>md$(i)=md$(i-14)</s></l>
 <l><num>2070</num> <s>next</s></l>
-<l><num>2080</num> <s></s>:</l>
+<l><num>2080</num> <pc>:</pc></l>
 <l><num>2100</num> <s>data " ","{rvon} {rvof}"," ","{rvon} {rvof}","{rvon}B{rvof}","{rvon}{yel} {lblu}{rvof}"," ","{rvon} {rvof}"," ","{rvon} {rvof}","{rvon}B{rvof}","{rvon} {rvof}"</s></l>
 <l><num>2110</num> <s>data " ","{rvon} {rvof}"</s></l>
-<l><num>2190</num> <s></s>:</l>
+<l><num>2190</num> <pc>:</pc></l>
 <l><num>2200</num> <s>for i=0 to 24</s></l>
 <l><num>2210</num> <s>read mb$(i)</s></l>
 <l><num>2220</num> <s>next</s></l>
-<l><num>2230</num> <s></s>:</l>
+<l><num>2230</num> <pc>:</pc></l>
 <l><num>2240</num> <s>data " ",q,a,w,s,e,d,r,f,t,g,y,h,u,j,i,k,o,l,p,"</s><pc>:</pc><s>",@,;,*,=</s></l>
-<l><num>2290</num> <s></s>:</l>
+<l><num>2290</num> <pc>:</pc></l>
 <l><num>3000</num> <s><w>rem</w>    ------------------------</s></l>
 <l><num>3001</num> <s><w>rem</w>    --- adressen des sid ---</s></l>
 <l><num>3002</num> <s><w>rem</w>    ------------------------</s></l>
-<l><num>3010</num> <s></s>:</l>
+<l><num>3010</num> <pc>:</pc></l>
 <l><num>3020</num> <s>si(1)=54272</s></l>
 <l><num>3030</num> <s>si(2)=si(1)+7</s></l>
 <l><num>3040</num> <s>si(3)=si(1)+14</s></l>
@@ -310,16 +312,16 @@
 <l><num>3110</num> <s>as(i)=si(i)+5</s></l>
 <l><num>3120</num> <s>ha(i)=si(i)+6</s></l>
 <l><num>3130</num> <s>next i</s></l>
-<l><num>3200</num> <s></s>:</l>
+<l><num>3200</num> <pc>:</pc></l>
 <l><num>4000</num> <s><w>rem</w>    ----------------------</s></l>
 <l><num>4001</num> <s><w>rem</w>    --- gestaltung des ---</s></l>
 <l><num>4002</num> <s><w>rem</w>    ---  bildschirms   ---</s></l>
 <l><num>4003</num> <s><w>rem</w>    ----------------------</s></l>
-<l><num>4010</num> <s></s>:</l>
+<l><num>4010</num> <pc>:</pc></l>
 <l><num>4150</num> <s>v=0</s><pc>:</pc><s>ak=0</s><pc>:</pc><s>g=1</s><pc>:</pc><s>ia=0</s></l>
-<l><num>4200</num> <s></s>:</l>
+<l><num>4200</num> <pc>:</pc></l>
 <l><num>4210</num> <s><w>print</w>"{home}{down}{down}{down}{down}{down}{down}{down}{down}"</s></l>
-<l><num>4250</num> <s></s>:</l>
+<l><num>4250</num> <pc>:</pc></l>
 <l><num>4300</num> <s><w>print</w>" instrumente        sonstiges"</s><pc>:</pc><s><w>print</w>" </s><s>(shift){down}"</s><pc>:</pc><s>s$="*"</s></l>
 <l><num>4310</num> <s>for i=0 to iz</s></l>
 <l><num>4320</num> <s>if s$&lt;>"" then read s$</s></l>
@@ -331,7 +333,7 @@
 <l><num>4380</num> <s>data "(') akkorde"</s></l>
 <l><num>4390</num> <s>data "hom lautstaerke +"</s></l>
 <l><num>4400</num> <s>data "del lautstaerke -",</s></l>
-<l><num>4500</num> <s></s>:</l>
+<l><num>4500</num> <pc>:</pc></l>
 <l><num>4700</num> <s><w>gosub</w> 10100</s></l>
 <l><num>4710</num> <s><w>gosub</w> 11100</s></l>
 <l><num>4720</num> <s><w>gosub</w> 12100</s></l>
@@ -339,14 +341,14 @@
 <l><num>4740</num> <s><w>gosub</w> 14100</s></l>
 <l><num>4750</num> <s><w>gosub</w> 15000</s></l>
 <l><num>4760</num> <s><w>gosub</w> 16040</s></l>
-<l><num>4770</num> <s></s>:</l>
+<l><num>4770</num> <pc>:</pc></l>
 <l><num>4780</num> <s><w>goto</w> 5000</s></l>
-<l><num>4790</num> <s></s>:</l>
+<l><num>4790</num> <pc>:</pc></l>
 <l><num>4800</num> <s><w>rem</w>   -------------------</s></l>
 <l><num>4801</num> <s><w>rem</w>   --- darstellung ---</s></l>
 <l><num>4802</num> <s><w>rem</w>   --- des manuals ---</s></l>
 <l><num>4803</num> <s><w>rem</w>   -------------------</s></l>
-<l><num>4810</num> <s></s>:</l>
+<l><num>4810</num> <pc>:</pc></l>
 <l><num>4820</num> <s><w>print</w>"{home}{down}";</s></l>
 <l><num>4825</num> <s>w=v+1</s><pc>:</pc><s>if </s><s>w&lt;0 then w=w+14</s></l>
 <l><num>4830</num> <s>for x=1 to 2</s><pc>:</pc><s><w>print</w>"{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}";</s></l>
@@ -371,18 +373,18 @@
 <l><num>4975</num> <s><w>print</w> mb$(i);</s></l>
 <l><num>4980</num> <s>next</s><pc>:</pc><s><w>print</w>"{rvof}"</s></l>
 <l><num>4990</num> <s><w>return</w></s></l>
-<l><num>4999</num> <s></s>:</l>
+<l><num>4999</num> <pc>:</pc></l>
 <l><num>5000</num> <s><w>rem</w>" UCCCCCCCCCCCCCCCCCCCCCCCCI</s></l>
 <l><num>5001</num> <s><w>rem</w>" B{CBM-A}CCCCCCCCCCCCCCCCCCCCCC{CBM-S}B</s></l>
 <l><num>5002</num> <s><w>rem</w>" BB  laufendes programm  BB</s></l>
 <l><num>5003</num> <s><w>rem</w>" B{CBM-Z}CCCCCCCCCCCCCCCCCCCCCC{CBM-X}B</s></l>
 <l><num>5004</num> <s><w>rem</w>" JCCCCCCCCCCCCCCCCCCCCCCCCK</s></l>
-<l><num>5010</num> <s></s>:</l>
+<l><num>5010</num> <pc>:</pc></l>
 <l><num>5020</num> <s>get a$</s></l>
 <l><num>5030</num> <s>if i3(ia)=0 then 5040</s></l>
 <l><num>5035</num> <s>if peek(203)=64 and p&lt;>0 then for i=1 to 3</s><pc>:</pc><s><w>poke</w> </s><s>wf(i),i1(ia)-1</s><pc>:</pc><s>next</s><pc>:</pc><s>p=0</s></l>
 <l><num>5040</num> <s>if a$="" then 5020</s></l>
-<l><num>5050</num> <s></s>:</l>
+<l><num>5050</num> <pc>:</pc></l>
 <l><num>5100</num> <s>if a$>="@" and a$&lt;="z" then gosub 20000</s><pc>:</pc><s><w>goto</w> </s><s>5020</s></l>
 <l><num>5110</num> <s>if a$="*" or a$=";" or a$="</s><pc>:</pc><s>" </s><s>or a$="=" then gosub 20000</s><pc>:</pc><s><w>goto</w> </s><s>5020</s></l>
 <l><num>5120</num> <s>if a$>="A" and a$&lt;=chr$(193+iz) then gosub 10000</s><pc>:</pc><s><w>goto</w> </s><s>5020</s></l>
@@ -392,63 +394,63 @@
 <l><num>5160</num> <s>if a$="/" then gosub 14000</s><pc>:</pc><s><w>goto</w> </s><s>5020</s></l>
 <l><num>5170</num> <s>if a$=chr$(32) then gosub 15000</s><pc>:</pc><s><w>goto</w> </s><s>5020</s></l>
 <l><num>5180</num> <s>if a$="{home}" or a$=chr$(20) then gosub 16000</s><pc>:</pc><s><w>goto</w> </s><s>5020</s></l>
-<l><num>5900</num> <s></s>:</l>
+<l><num>5900</num> <pc>:</pc></l>
 <l><num>6000</num> <s><w>goto</w> 5020</s></l>
-<l><num>7000</num> <s></s>:</l>
+<l><num>7000</num> <pc>:</pc></l>
 <l><num>8000</num> <s><w>rem</w>"  CCCCCCCCCCCCCCCCCCCCCCCCC</s></l>
 <l><num>8001</num> <s><w>rem</w>" UCCCCCCCCCCCCCCCCCCCCCCCCCI</s></l>
 <l><num>8002</num> <s><w>rem</w>" B klang- und tastroutinen B</s></l>
 <l><num>8003</num> <s><w>rem</w>" JCCCCCCCCCCCCCCCCCCCCCCCCCK</s></l>
 <l><num>8004</num> <s><w>rem</w>"  CCCCCCCCCCCCCCCCCCCCCCCCC</s></l>
-<l><num>9000</num> <s></s>:</l>
+<l><num>9000</num> <pc>:</pc></l>
 <l><num>10000</num> <s><w>rem</w>  ----------------------</s></l>
 <l><num>10001</num> <s><w>rem</w>  --- instrumentwahl ---</s></l>
 <l><num>10002</num> <s><w>rem</w>  ----------------------</s></l>
-<l><num>10010</num> <s></s>:</l>
+<l><num>10010</num> <pc>:</pc></l>
 <l><num>10020</num> <s>ib=ia</s></l>
 <l><num>10030</num> <s>ia=asc(a$)-193</s></l>
-<l><num>10040</num> <s></s>:</l>
+<l><num>10040</num> <pc>:</pc></l>
 <l><num>10100</num> <s><w>print</w>"{home}"</s></l>
 <l><num>10110</num> <s>for i=1 to 7</s></l>
 <l><num>10120</num> <s><w>print</w> " "ib$(ia,i)</s></l>
 <l><num>10130</num> <s>next i</s></l>
-<l><num>10150</num> <s></s>:</l>
+<l><num>10150</num> <pc>:</pc></l>
 <l><num>10200</num> <s>for i=1 to 3</s></l>
 <l><num>10210</num> <s><w>poke</w> as(i),i2(ia)</s></l>
 <l><num>10220</num> <s><w>poke</w> ha(i),i3(ia)</s></l>
 <l><num>10230</num> <s><w>poke</w> tl(i),i4(ia)</s></l>
 <l><num>10240</num> <s><w>poke</w> th(i),i5(ia)</s></l>
 <l><num>10250</num> <s>next i</s></l>
-<l><num>10300</num> <s></s>:</l>
+<l><num>10300</num> <pc>:</pc></l>
 <l><num>10310</num> <s>h=ih(ia)</s></l>
 <l><num>10320</num> <s>o=io(ia)</s></l>
 <l><num>10330</num> <s><w>gosub</w> 14100</s></l>
 <l><num>10340</num> <s><w>gosub</w> 11060</s></l>
-<l><num>10390</num> <s></s>:</l>
+<l><num>10390</num> <pc>:</pc></l>
 <l><num>10400</num> <s><w>print</w>"{home}"</s></l>
 <l><num>10410</num> <s>for i=0 to ib+10</s></l>
 <l><num>10420</num> <s><w>print</w></s></l>
 <l><num>10430</num> <s>next i</s></l>
 <l><num>10440</num> <s><w>print</w>"{rght}{rght}{rght}"i$(ib)"{home}"</s></l>
-<l><num>10450</num> <s></s>:</l>
+<l><num>10450</num> <pc>:</pc></l>
 <l><num>10460</num> <s>for i=0 to ia+10</s></l>
 <l><num>10470</num> <s><w>print</w></s></l>
 <l><num>10480</num> <s>next i</s></l>
 <l><num>10490</num> <s><w>print</w>"{rght}{rght}{rght}{yel}"i$(ia)"{lblu}{home}"</s></l>
-<l><num>10500</num> <s></s>:</l>
+<l><num>10500</num> <pc>:</pc></l>
 <l><num>10800</num> <s><w>return</w></s></l>
-<l><num>10900</num> <s></s>:</l>
+<l><num>10900</num> <pc>:</pc></l>
 <l><num>11000</num> <s><w>rem</w>  -----------------------</s></l>
 <l><num>11001</num> <s><w>rem</w>  --- aktuelle oktave ---</s></l>
 <l><num>11002</num> <s><w>rem</w>  -----------------------</s></l>
-<l><num>11010</num> <s></s>:</l>
+<l><num>11010</num> <pc>:</pc></l>
 <l><num>11020</num> <s>if a$="\" then o=io(ia)</s><pc>:</pc><s>if </s><s>v&lt;>0 then v=0</s><pc>:</pc><s><w>gosub</w> </s><s>12100</s></l>
 <l><num>11030</num> <s>if a$="+" then o=o+14</s></l>
 <l><num>11050</num> <s>if a$="-" then o=o-14</s></l>
 <l><num>11060</num> <s>d=o+v+ak+11</s></l>
 <l><num>11070</num> <s>if d&lt;0 then o=o+14</s><pc>:</pc><s><w>goto</w> </s><s>11060</s></l>
 <l><num>11080</num> <s>if d>mz-24 then o=o-14</s><pc>:</pc><s><w>goto</w> </s><s>11060</s></l>
-<l><num>11090</num> <s></s>:</l>
+<l><num>11090</num> <pc>:</pc></l>
 <l><num>11100</num> <s>ok=int((o+7)/14)</s></l>
 <l><num>11110</num> <s><w>print</w>"{home}"</s></l>
 <l><num>11120</num> <s><w>print</w>"{down}{down}{down}{down}{down}{down}";tab(13);</s></l>
@@ -460,13 +462,13 @@
 <l><num>11170</num> <s><w>print</w>"'";</s></l>
 <l><num>11180</num> <s>next i</s></l>
 <l><num>11190</num> <s><w>print</w>"{$a0}{$a0}{$a0}"</s></l>
-<l><num>11300</num> <s></s>:</l>
+<l><num>11300</num> <pc>:</pc></l>
 <l><num>11800</num> <s><w>return</w></s></l>
-<l><num>11900</num> <s></s>:</l>
+<l><num>11900</num> <pc>:</pc></l>
 <l><num>12000</num> <s><w>rem</w>  --------------------</s></l>
 <l><num>12001</num> <s><w>rem</w>  --- verschiebung ---</s></l>
 <l><num>12002</num> <s><w>rem</w>  --------------------</s></l>
-<l><num>12010</num> <s></s>:</l>
+<l><num>12010</num> <pc>:</pc></l>
 <l><num>12020</num> <s>if a$="&lt;" then v=v-2</s></l>
 <l><num>12030</num> <s>if a$=">" then v=v+2</s></l>
 <l><num>12050</num> <s>d=o+v+ak+11</s></l>
@@ -474,15 +476,15 @@
 <l><num>12060</num> <s>if d&lt;0 then v=v+2</s><pc>:</pc><s><w>goto</w> </s><s>12050</s></l>
 <l><num>12070</num> <s>if v>6 then v=-6</s><pc>:</pc><s>o=o+14</s><pc>:</pc><s><w>gosub</w> </s><s>11100</s></l>
 <l><num>12080</num> <s>if v&lt;-6 then v=6</s><pc>:</pc><s>o=o-14</s><pc>:</pc><s><w>gosub</w> </s><s>11100</s></l>
-<l><num>12090</num> <s></s>:</l>
+<l><num>12090</num> <pc>:</pc></l>
 <l><num>12100</num> <s><w>gosub</w> 4800</s></l>
-<l><num>12130</num> <s></s>:</l>
+<l><num>12130</num> <pc>:</pc></l>
 <l><num>12800</num> <s><w>return</w></s></l>
-<l><num>12900</num> <s></s>:</l>
+<l><num>12900</num> <pc>:</pc></l>
 <l><num>13000</num> <s><w>rem</w>  ---------------</s></l>
 <l><num>13001</num> <s><w>rem</w>  --- akkorde ---</s></l>
 <l><num>13002</num> <s><w>rem</w>  ---------------</s></l>
-<l><num>13010</num> <s></s>:</l>
+<l><num>13010</num> <pc>:</pc></l>
 <l><num>13020</num> <s>if a$="'" then ak=0</s></l>
 <l><num>13030</num> <s>if a$="(" then ak=ak-2</s></l>
 <l><num>13040</num> <s>if a$=")" then ak=ak+2</s></l>
@@ -490,93 +492,93 @@
 <l><num>13055</num> <s>if d&lt;0 then ak=ak+2</s><pc>:</pc><s><w>goto</w> </s><s>13050</s></l>
 <l><num>13060</num> <s>if d>mz-24 then ak=ak-2</s><pc>:</pc><s><w>goto</w>13050</s></l>
 <l><num>13070</num> <s>if abs(ak)>16 then ak=16*sgn(ak)</s><pc>:</pc><s><w>goto</w> </s><s>13050</s></l>
-<l><num>13090</num> <s></s>:</l>
+<l><num>13090</num> <pc>:</pc></l>
 <l><num>13100</num> <s><w>print</w>"{home}"</s></l>
 <l><num>13110</num> <s><w>print</w>"{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}";tab(20);</s></l>
 <l><num>13120</num> <s><w>print</w>" )";ak/2+sgn(ak);"( "</s></l>
-<l><num>13130</num> <s></s>:</l>
+<l><num>13130</num> <pc>:</pc></l>
 <l><num>13800</num> <s><w>return</w></s></l>
-<l><num>13900</num> <s></s>:</l>
+<l><num>13900</num> <pc>:</pc></l>
 <l><num>14000</num> <s><w>rem</w>  -------------------</s></l>
 <l><num>14001</num> <s><w>rem</w>  --- hall-effekt ---</s></l>
 <l><num>14002</num> <s><w>rem</w>  -------------------</s></l>
-<l><num>14010</num> <s></s>:</l>
+<l><num>14010</num> <pc>:</pc></l>
 <l><num>14020</num> <s>if h=1 then h=3</s><pc>:</pc><s><w>goto</w> </s><s>14100</s></l>
 <l><num>14030</num> <s>h=1</s></l>
-<l><num>14090</num> <s></s>:</l>
+<l><num>14090</num> <pc>:</pc></l>
 <l><num>14100</num> <s>if h=3 then h$=")))Q((("</s></l>
 <l><num>14110</num> <s>if h=1 then h$="       "</s><pc>:</pc><s>g=1</s></l>
-<l><num>14120</num> <s></s>:</l>
+<l><num>14120</num> <pc>:</pc></l>
 <l><num>14150</num> <s><w>print</w>"{home}"</s></l>
 <l><num>14160</num> <s><w>print</w>"{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}";tab(30);</s></l>
 <l><num>14170</num> <s><w>print</w> h$</s></l>
-<l><num>14190</num> <s></s>:</l>
+<l><num>14190</num> <pc>:</pc></l>
 <l><num>14800</num> <s><w>return</w></s></l>
-<l><num>14900</num> <s></s>:</l>
+<l><num>14900</num> <pc>:</pc></l>
 <l><num>15000</num> <s><w>rem</w>  --------------------------</s></l>
 <l><num>15001</num> <s><w>rem</w>  --- tongeneratorenstop ---</s></l>
 <l><num>15002</num> <s><w>rem</w>  --------------------------</s></l>
-<l><num>15010</num> <s></s>:</l>
+<l><num>15010</num> <pc>:</pc></l>
 <l><num>15020</num> <s>for i=1 to 3</s></l>
 <l><num>15030</num> <s><w>poke</w> wf(i),0</s></l>
 <l><num>15040</num> <s>next i</s></l>
-<l><num>15050</num> <s></s>:</l>
+<l><num>15050</num> <pc>:</pc></l>
 <l><num>15800</num> <s><w>return</w></s></l>
-<l><num>15900</num> <s></s>:</l>
+<l><num>15900</num> <pc>:</pc></l>
 <l><num>16000</num> <s><w>rem</w>  -------------------</s></l>
 <l><num>16001</num> <s><w>rem</w>  --- lautstaerke ---</s></l>
 <l><num>16002</num> <s><w>rem</w>  -------------------</s></l>
-<l><num>16010</num> <s></s>:</l>
+<l><num>16010</num> <pc>:</pc></l>
 <l><num>16020</num> <s>if a$="{home}" then l=l+(l>0)</s></l>
 <l><num>16030</num> <s>if a$=chr$(20) then l=l-(l&lt;15)</s></l>
 <l><num>16040</num> <s><w>poke</w> si(1)+24,l</s><pc>:</pc><s><w>print</w>"{home}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}{down}";tab(21);</s></l>
 <l><num>16050</num> <s>if l>0 then for i=1 to l</s><pc>:</pc><s><w>print</w>"Q";</s><pc>:</pc><s>next </s><s>i</s></l>
 <l><num>16060</num> <s>if l&lt;15 then for i=l to 14</s><pc>:</pc><s><w>print</w>".";</s><pc>:</pc><s>next </s><s>i</s></l>
-<l><num>16070</num> <s></s>:</l>
+<l><num>16070</num> <pc>:</pc></l>
 <l><num>16800</num> <s><w>return</w></s></l>
-<l><num>16900</num> <s></s>:</l>
+<l><num>16900</num> <pc>:</pc></l>
 <l><num>20000</num> <s><w>rem</w>"     UCCCCCCCCCCCCCI</s></l>
 <l><num>20001</num> <s><w>rem</w>"     B    toene    B</s></l>
 <l><num>20002</num> <s><w>rem</w>"     JCCCCCCCCCCCCCK</s></l>
-<l><num>20010</num> <s></s>:</l>
+<l><num>20010</num> <pc>:</pc></l>
 <l><num>20020</num> <s><w>poke</w> wf(g),i1(ia)-1</s><pc>:</pc><s>p=1</s></l>
-<l><num>20030</num> <s></s>:</l>
+<l><num>20030</num> <pc>:</pc></l>
 <l><num>20050</num> <s>a=asc(a$)-57</s></l>
 <l><num>20060</num> <s>if a&lt;0 then a=0</s></l>
-<l><num>20070</num> <s></s>:</l>
+<l><num>20070</num> <pc>:</pc></l>
 <l><num>20100</num> <s>t=t%(a)</s><pc>:</pc><s>if </s><s>t=0 then return</s></l>
 <l><num>20110</num> <s>n1=m1%(t+d-ak)</s><pc>:</pc><s>n2=m2%(t+d-ak)</s></l>
-<l><num>20120</num> <s></s>:</l>
+<l><num>20120</num> <pc>:</pc></l>
 <l><num>20130</num> <s><w>poke</w> fl(g),n1</s></l>
 <l><num>20140</num> <s><w>poke</w> fh(g),n2</s></l>
-<l><num>20150</num> <s></s>:</l>
+<l><num>20150</num> <pc>:</pc></l>
 <l><num>20160</num> <s><w>poke</w> wf(g),i1(ia)</s></l>
-<l><num>20170</num> <s></s>:</l>
+<l><num>20170</num> <pc>:</pc></l>
 <l><num>20180</num> <s>gv=g</s></l>
 <l><num>20200</num> <s>g=g+1</s></l>
 <l><num>20210</num> <s>if g>h then g=1</s></l>
-<l><num>20220</num> <s></s>:</l>
+<l><num>20220</num> <pc>:</pc></l>
 <l><num>20250</num> <s>if ak=0 then return</s></l>
-<l><num>20300</num> <s></s>:</l>
+<l><num>20300</num> <pc>:</pc></l>
 <l><num>20310</num> <s>if n1*n2=0 then return</s></l>
 <l><num>20320</num> <s>n1=m1%(t+d)</s></l>
 <l><num>20330</num> <s>if n1=0 then n1=m1%(t+d-sgn(ak))</s></l>
 <l><num>20340</num> <s>n2=m2%(t+d)</s></l>
 <l><num>20350</num> <s>if n2=0 then n2=m2%(t+d-sgn(ak))</s></l>
-<l><num>20360</num> <s></s>:</l>
+<l><num>20360</num> <pc>:</pc></l>
 <l><num>20370</num> <s>gv=g</s></l>
 <l><num>20380</num> <s>if h=1 then g=2</s><pc>:</pc><s>gv=1</s></l>
-<l><num>20390</num> <s></s>:</l>
+<l><num>20390</num> <pc>:</pc></l>
 <l><num>20400</num> <s><w>poke</w> wf(g),i1(ia)-1</s></l>
 <l><num>20410</num> <s><w>poke</w> fl(g),n1</s></l>
 <l><num>20420</num> <s><w>poke</w> fh(g),n2</s></l>
 <l><num>20430</num> <s><w>poke</w> wf(g),i1(ia)</s></l>
-<l><num>20440</num> <s></s>:</l>
+<l><num>20440</num> <pc>:</pc></l>
 <l><num>20500</num> <s>g=g+1</s></l>
 <l><num>20510</num> <s>if g>h then g=1</s></l>
-<l><num>20800</num> <s></s>:</l>
+<l><num>20800</num> <pc>:</pc></l>
 <l><num>20900</num> <s><w>return</w></s></l>
-<l><num>30000</num> <s></s>:</l>
+<l><num>30000</num> <pc>:</pc></l>
 <l><num>50000</num> <s>end</s></l>
 </body>
 </text>
