@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="code.css"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>Title</title>
+			</titleStmt>
+			<publicationStmt>
+				<p>Publication Information</p>
+			</publicationStmt>
+			<sourceDesc>
+				<p>https://www.64er-magazin.de/8406/morsetrainer.html</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+<text xml:space="preserve">
+<body>
+<l><num>0</num> <s><w>rem</w> *****************************</s></l>
+<l><num>1</num> <s><w>rem</w> *                           *</s></l>
+<l><num>2</num> <s><w>rem</w> * morsetrainer + dolmetcher *</s></l>
+<l><num>3</num> <s><w>rem</w> * c by jens martens und     *</s></l>
+<l><num>4</num> <s><w>rem</w> *     stefan ingenhorst     *</s></l>
+<l><num>5</num> <s><w>rem</w> *                           *</s></l>
+<l><num>6</num> <s><w>rem</w> *****************************</s></l>
+<l><num>7</num> <s><w>rem</w> ******andromat software******</s></l>
+<l><num>8</num> <s><w>rem</w> *****************************</s></l>
+<l><num>9</num> <s><w>gosub</w>20000</s></l>
+<l><num>10</num> <s><w>poke</w>55,200</s><pc>:</pc><s><w>poke</w>56,47</s><pc>:</pc><s>clr</s><pc>:</pc><s>m$=""</s><pc>:</pc><s>fori=54272to54300</s><pc>:</pc><s><w>poke</w>i,0</s><pc>:</pc><s>next</s></l>
+<l><num>20</num> <s><w>rem</w> ********************************</s></l>
+<l><num>25</num> <s><w>rem</w> * neue zeichen;77-kurz,78-lang *</s></l>
+<l><num>30</num> <s><w>rem</w> ********************************</s></l>
+<l><num>40</num> <s><w>poke</w>56334,peek(56334)and254</s><pc>:</pc><s><w>poke</w>1,peek(1)and251</s></l>
+<l><num>50</num> <s>fori=0to2048</s><pc>:</pc><s>ifi=iithengosub10000</s></l>
+<l><num>60</num> <s><w>poke</w>12288+i,peek(53248+i)</s><pc>:</pc><s>next</s></l>
+<l><num>70</num> <s><w>poke</w>1,peek(1)or4</s><pc>:</pc><s><w>poke</w>56334,peek(56334)or1</s></l>
+<l><num>80</num> <s><w>poke</w>53272,(peek(53272)and240)or12</s></l>
+<l><num>90</num> <s>reada</s><pc>:</pc><s>ifa=-1then160</s></l>
+<l><num>100</num> <s>forj=0to7</s><pc>:</pc><s>readb</s><pc>:</pc><s><w>poke</w>12288+a*8+j,b</s><pc>:</pc><s>next</s><pc>:</pc><s><w>goto</w>90</s></l>
+<l><num>110</num> <s>data 77,0,0,0,24,24,0,0,0</s></l>
+<l><num>120</num> <s>data 78,0,0,0,126,126,0,0,0</s></l>
+<l><num>130</num> <s>data-1</s></l>
+<l><num>140</num> <s><w>rem</w> ***************</s></l>
+<l><num>150</num> <s><w>rem</w> ** set sound **</s></l>
+<l><num>155</num> <s><w>rem</w> ***************</s></l>
+<l><num>160</num> <s>w=54276</s><pc>:</pc><s><w>poke</w>54277,32</s><pc>:</pc><s><w>poke</w>54278,242</s></l>
+<l><num>170</num> <s><w>poke</w>54272,157</s><pc>:</pc><s><w>poke</w>54273,69</s></l>
+<l><num>180</num> <s><w>poke</w>54296,15</s></l>
+<l><num>190</num> <s><w>rem</w> **********************</s></l>
+<l><num>200</num> <s><w>rem</w> ** morsedaten lesen **</s></l>
+<l><num>201</num> <s><w>rem</w> **********************</s></l>
+<l><num>205</num> <s>dimm$(255)</s></l>
+<l><num>210</num> <s>readm</s><pc>:</pc><s>ifm=-1then300</s></l>
+<l><num>220</num> <s>readm$</s><pc>:</pc><s>m$(m)=m$</s><pc>:</pc><s><w>goto</w>210</s></l>
+<l><num>290</num> <s><w>rem</w> ***********</s></l>
+<l><num>291</num> <s><w>rem</w> ** menue **</s></l>
+<l><num>292</num> <s><w>rem</w> ***********</s></l>
+<l><num>300</num> <s><w>print</w>"{clr}"tab(13)"{orng}{down}{rvon}* m e n u e *{rvof}"</s></l>
+<l><num>320</num> <s><w>print</w>"{yel}{down}{down}{down}{down}{rght}{rght}{rvon}1{rvof} computer morst zufallstext"</s></l>
+<l><num>330</num> <s><w>print</w>"{down}{down}{rght}{rght}{rvon}2{rvof} computer morst eingegebenen text"</s></l>
+<l><num>340</num> <s><w>print</w>"{down}{down}{rght}{rght}{rvon}3{rvof} computer empfaengt"</s></l>
+<l><num>350</num> <s><w>print</w>"{down}{down}{rght}{rght}{rvon}4{rvof} morsezeichen auflisten"</s></l>
+<l><num>360</num> <s><w>print</w>"{down}{down}{rght}{rght}{rvon}5{rvof} programm beenden"</s></l>
+<l><num>370</num> <s>input"{down}{down}{down}{rght}{rght}bitte waehlen ";m</s><pc>:</pc><s>ifm&lt;1orm>5then300</s></l>
+<l><num>380</num> <s>onmgoto1000,2000,3000,4000,5000</s></l>
+<l><num>990</num> <s><w>rem</w> ***************************</s></l>
+<l><num>991</num> <s><w>rem</w> ** zufallstextgeneration **</s></l>
+<l><num>992</num> <s><w>rem</w> ***************************</s></l>
+<l><num>1000</num> <s><w>print</w>"{clr}{down}{down}{down}{down}{rght}{rght}bitte geschwindigkeit waehlen"</s></l>
+<l><num>1010</num> <s>input"{down}{rght}{rght}(in worten pro minute) ";g</s></l>
+<l><num>1020</num> <s>m$=""</s><pc>:</pc><s>fori=1to40</s><pc>:</pc><s>m$=m$+" </s><s>"</s><pc>:</pc><s>forj=1to5</s></l>
+<l><num>1030</num> <s>a=int(65*rnd(1))+34</s><pc>:</pc><s>ifm$(a)=""then1030</s></l>
+<l><num>1040</num> <s>m$=m$+chr$(a)</s><pc>:</pc><s>nextj,i</s></l>
+<l><num>1050</num> <s><w>print</w></s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w></s></l>
+<l><num>1060</num> <s>form=1to252step36</s><pc>:</pc><s><w>print</w>mid$(m$,m,36)</s><pc>:</pc><s>next</s></l>
+<l><num>1070</num> <s><w>goto</w>2500</s></l>
+<l><num>1997</num> <s><w>rem</w> ******************</s></l>
+<l><num>1998</num> <s><w>rem</w> ** eigener text **</s></l>
+<l><num>1999</num> <s><w>rem</w> ******************</s></l>
+<l><num>2000</num> <s><w>print</w>"{clr}{down}{down}{down}{rght}{rght}bitte text eingeben !"</s></l>
+<l><num>2020</num> <s><w>print</w>"{down}{down}{rght}{rght}wenn fertig, 'f1' druecken ."</s></l>
+<l><num>2030</num> <s>m$=""</s></l>
+<l><num>2040</num> <s>getz$</s><pc>:</pc><s>ifz$=""then2040</s></l>
+<l><num>2050</num> <s>ifasc(z$)=133then2100</s></l>
+<l><num>2060</num> <s>ifasc(z$)=20thenm$=left$(m$,len(m$)-1)</s><pc>:</pc><s><w>goto</w>2080</s></l>
+<l><num>2065</num> <s>ifm$(asc(z$))=""then2040</s></l>
+<l><num>2070</num> <s>m$=m$+z$</s><pc>:</pc><s>iflen(m$)>254then2100</s></l>
+<l><num>2080</num> <s><w>print</w>"{home}{down}{down}{down}{down}{down}{down}{down}{down}{rght}{rght}"m$"  "</s></l>
+<l><num>2090</num> <s><w>goto</w>2040</s></l>
+<l><num>2100</num> <s><w>print</w>"{home}"</s><pc>:</pc><s>fork=1to8</s><pc>:</pc><s><w>print</w>chr$(17)</s><pc>:</pc><s>next</s><pc>:</pc><s><w>print</w>"{rght}{rght}{orng}text </s><s>uebernommen .{yel}"</s></l>
+<l><num>2110</num> <s><w>print</w>"{down}{rght}{rght}welche geschwindigkeit"</s></l>
+<l><num>2120</num> <s>input"{down}{rght}{rght}(in worten/minute){up}{up}{rght}{rght}{rght}{rght}{rght}";g</s></l>
+<l><num>2497</num> <s><w>rem</w> *****************</s></l>
+<l><num>2498</num> <s><w>rem</w> ** uebersetzen **</s></l>
+<l><num>2499</num> <s><w>rem</w> *****************</s></l>
+<l><num>2500</num> <s>g=20/g*46</s></l>
+<l><num>2510</num> <s>fori=1tolen(m$)</s><pc>:</pc><s>a=asc(mid$(m$,i,1))</s></l>
+<l><num>2515</num> <s>ifa=32thengoto2900</s></l>
+<l><num>2520</num> <s>forj=1tolen(m$(a))</s><pc>:</pc><s>b=asc(mid$(m$(a),j,1))</s></l>
+<l><num>2530</num> <s>ifb=205thengosub2700</s></l>
+<l><num>2540</num> <s>ifb=206thengosub2800</s></l>
+<l><num>2550</num> <s>nextj</s><pc>:</pc><s>fork=1tog</s><pc>:</pc><s>nextk</s></l>
+<l><num>2560</num> <s>nexti</s></l>
+<l><num>2565</num> <s><w>print</w>"{down}{rght}{rght}bitte taste druecken "</s></l>
+<l><num>2570</num> <s><w>poke</w>198,0</s><pc>:</pc><s>wait198,1</s><pc>:</pc><s><w>poke</w>198,0</s><pc>:</pc><s><w>goto</w>300</s></l>
+<l><num>2700</num> <s><w>poke</w>w,33</s><pc>:</pc><s>fork=1tog</s><pc>:</pc><s>next</s><pc>:</pc><s><w>poke</w>w,32</s><pc>:</pc><s>fork=1tog</s><pc>:</pc><s>next</s><pc>:</pc><s><w>return</w></s></l>
+<l><num>2800</num> <s><w>poke</w>w,33</s><pc>:</pc><s>fork=1to3*g</s><pc>:</pc><s>next</s><pc>:</pc><s><w>poke</w>w,32</s><pc>:</pc><s>fork=1tog</s><pc>:</pc><s>next</s><pc>:</pc><s><w>return</w></s></l>
+<l><num>2900</num> <s>fork=1to3*g</s><pc>:</pc><s>next</s><pc>:</pc><s><w>goto</w>2560</s></l>
+<l><num>2997</num> <s><w>rem</w> **************************</s></l>
+<l><num>2998</num> <s><w>rem</w> * morsezeichen empfangen *</s></l>
+<l><num>2999</num> <s><w>rem</w> **************************</s></l>
+<l><num>3000</num> <s><w>print</w>"{clr}{down}geben sie jetzt ihre morse-zeichen ueber{down}die taste 'f7' ein !"</s></l>
+<l><num>3005</num> <s><w>print</w>"{down}wenn fertig, ca. 5 sec warten und danach{down}taste erneut druecken"</s></l>
+<l><num>3030</num> <s><w>print</w>"{down}{down}{rvon}{lblu}alles roger{rvof}{yel} es kann jetzt losgehen !"</s></l>
+<l><num>3100</num> <s>w=54276</s><pc>:</pc><s>i=49152</s></l>
+<l><num>3110</num> <s><w>poke</w>198,0</s><pc>:</pc><s>wait198,1</s><pc>:</pc><s><w>poke</w>198,0</s></l>
+<l><num>3120</num> <s>ifpeek(203)&lt;>64then3200</s></l>
+<l><num>3160</num> <s><w>poke</w>w,32</s><pc>:</pc><s>sys65499</s></l>
+<l><num>3170</num> <s>ifpeek(203)=64then3170</s></l>
+<l><num>3180</num> <s><w>goto</w>3330</s></l>
+<l><num>3200</num> <s><w>poke</w>w,33</s><pc>:</pc><s>sys65499</s></l>
+<l><num>3210</num> <s>ifpeek(203)&lt;>64then3210</s></l>
+<l><num>3330</num> <s>ifti>255then3500</s></l>
+<l><num>3340</num> <s><w>poke</w>i,ti</s><pc>:</pc><s>i=i+1</s><pc>:</pc><s><w>goto</w>3120</s></l>
+<l><num>3497</num> <s><w>rem</w> ********************</s></l>
+<l><num>3498</num> <s><w>rem</w> * morse-auswertung *</s></l>
+<l><num>3499</num> <s><w>rem</w> ********************</s></l>
+<l><num>3500</num> <s><w>print</w>"{down}{down}es folgt die auswertung"</s><pc>:</pc><s><w>print</w>"{down}{orng}"</s><pc>:</pc><s>m=0</s><pc>:</pc><s>m$=""</s></l>
+<l><num>3510</num> <s>forii=49152toi-1</s><pc>:</pc><s>m=m+peek(ii)</s><pc>:</pc><s>next</s></l>
+<l><num>3520</num> <s>m=m/(i-49152)</s></l>
+<l><num>3530</num> <s>forii=49152toi-1</s><pc>:</pc><s>n=peek(ii)</s></l>
+<l><num>3540</num> <s>ifn>mand(ii/2&lt;>int(ii/2))thengosub3600</s><pc>:</pc><s>m$=""</s></l>
+<l><num>3550</num> <s>ifn&lt;mand(ii/2=int(ii/2))thenm$=m$+chr$(205)</s></l>
+<l><num>3560</num> <s>ifn>mand(ii/2=int(ii/2))thenm$=m$+chr$(206)</s></l>
+<l><num>3570</num> <s>next</s><pc>:</pc><s><w>gosub</w>3600</s></l>
+<l><num>3580</num> <s><w>print</w></s><pc>:</pc><s><w>print</w>"{yel}{down}{down}bitte </s><s>taste druecken"</s></l>
+<l><num>3590</num> <s><w>poke</w>198,0</s><pc>:</pc><s>wait198,1</s><pc>:</pc><s><w>poke</w>198,0</s><pc>:</pc><s><w>goto</w>300</s></l>
+<l><num>3600</num> <s>forj=32to90</s></l>
+<l><num>3610</num> <s>ifm$=m$(j)thenprintchr$(j);</s></l>
+<l><num>3620</num> <s>next</s></l>
+<l><num>3630</num> <s>ifn>m*3thenprintchr$(32);</s></l>
+<l><num>3640</num> <s><w>return</w></s></l>
+<l><num>3997</num> <s><w>rem</w> ******************</s></l>
+<l><num>3998</num> <s><w>rem</w> * zeichentabelle *</s></l>
+<l><num>3999</num> <s><w>rem</w> ******************</s></l>
+<l><num>4000</num> <s>m=0</s><pc>:</pc><s>n=0</s><pc>:</pc><s><w>print</w>"{clr}"</s><pc>:</pc><s>fori=1to100</s><pc>:</pc><s>ifm$(i)=""then4100</s></l>
+<l><num>4010</num> <s>m$=m$(i)</s><pc>:</pc><s>ifi=32then4100</s></l>
+<l><num>4020</num> <s><w>print</w>tab(m*15)chr$(i)" = "m$</s><pc>:</pc><s>n=n+1</s><pc>:</pc><s>ifn=19thenprint"{home}"</s><pc>:</pc><s>n=0</s><pc>:</pc><s>m=m+1</s></l>
+<l><num>4100</num> <s>next</s></l>
+<l><num>4200</num> <s><w>print</w>"{home}{rght}{rght}"</s><pc>:</pc><s>fork=1to11</s><pc>:</pc><s><w>print</w>chr$(17)</s><pc>:</pc><s>next</s><pc>:</pc><s><w>print</w>"bitte </s><s>taste druecken"</s></l>
+<l><num>4300</num> <s><w>poke</w>198,0</s><pc>:</pc><s>wait198,1</s><pc>:</pc><s><w>poke</w>198,0</s><pc>:</pc><s><w>goto</w>300</s></l>
+<l><num>4997</num> <s><w>rem</w> **********</s></l>
+<l><num>4998</num> <s><w>rem</w> * abgang *</s></l>
+<l><num>4999</num> <s><w>rem</w> **********</s></l>
+<l><num>5000</num> <s><w>print</w>"{clr}"spc(11)"{down}{down}{down}{down}ok, das war's"</s></l>
+<l><num>5010</num> <s>fori=1to2000</s><pc>:</pc><s>next</s><pc>:</pc><s>sys64738</s></l>
+<l><num>9998</num> <s><w>rem</w> **************</s></l>
+<l><num>10000</num> <s><w>poke</w>214,22</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>poke</w>211,ii/100</s></l>
+<l><num>10010</num> <s><w>print</w>" {rvon}{lblu} bitte warten {rvof}{yel}"</s></l>
+<l><num>10015</num> <s>ii=ii+100</s></l>
+<l><num>10020</num> <s><w>return</w></s></l>
+<l><num>19997</num> <s><w>rem</w> *************</s></l>
+<l><num>19998</num> <s><w>rem</w> * titelbild *</s></l>
+<l><num>19999</num> <s><w>rem</w> *************</s></l>
+<l><num>20000</num> <s><w>poke</w>53280,0</s><pc>:</pc><s><w>poke</w>53281,0</s></l>
+<l><num>20010</num> <s><w>print</w>"{clr}{yel}"spc(7)"W   W"spc(20)"{red}{rvon}{SHIFT-POUND} {rvof}{SHIFT-POUND}{yel}"</s></l>
+<l><num>20020</num> <s><w>print</w>spc(8)"{CBM-B} {CBM-D}{CBM-V}"spc(19)"{red}{rvon}{SHIFT-POUND} {rvof}{SHIFT-POUND}{yel}"</s></l>
+<l><num>20030</num> <s><w>print</w>spc(9)"{CBM-B}{CBM-V}"spc(19)"{red}{rvon}{SHIFT-POUND} {rvof}{SHIFT-POUND}{yel}"</s></l>
+<l><num>20040</num> <s><w>print</w>spc(8)"{CBM-D}{CBM-V}{CBM-B}    {CBM-*}"spc(13)"{red}{rvon}{SHIFT-POUND} {rvof}{SHIFT-POUND}{yel}"</s></l>
+<l><num>20050</num> <s><w>print</w>spc(7)"W{CBM-V}  {CBM-B}   {CBM-D}"spc(12)"{red}{rvon}{SHIFT-POUND}    {rvof}{SHIFT-POUND}{yel}"</s></l>
+<l><num>20060</num> <s><w>print</w>spc(12)"{CBM-B}  {CBM-D}"spc(14)"{red}{rvon}{SHIFT-POUND} {rvof}{SHIFT-POUND}{yel}"</s></l>
+<l><num>20070</num> <s><w>print</w>spc(13)"{CBM-B} {CBM-D}"spc(13)"{red}{rvon}{SHIFT-POUND} {rvof}{SHIFT-POUND}{yel}"</s></l>
+<l><num>20080</num> <s><w>print</w>spc(14)"{CBM-B}{CBM-V}"spc(11)"{red}{rvon}{CBM-*}{SHIFT-POUND} {rvof}{SHIFT-POUND}{yel}"</s></l>
+<l><num>20090</num> <s><w>print</w>spc(10)"{rvon}{CBM-*}{rvof}{CBM-F}{CBM-F}{CBM-F}{CBM-V}{CBM-V}"spc(11)"{red}{rvon}  {rvof}{SHIFT-POUND}"</s></l>
+<l><num>20100</num> <s><w>print</w>spc(27)"{red}{rvon}  {CBM-*}{rvof}"</s></l>
+<l><num>20110</num> <s><w>print</w>spc(11)"{yel}{down}{down}{down}morsezeichen"</s></l>
+<l><num>20120</num> <s><w>print</w>spc(7)"{gry3}{down}{down}{rvon}c{rvof} by jens martens und"</s><pc>:</pc><s><w>print</w>tab(14)"{down}stefan </s><s>ingenhorst"</s></l>
+<l><num>20130</num> <s><w>print</w>"{yel}{down}{down}{rght}{rght}{rght}{rght}{rvon}a n d r o m a t - s o f t w a r e{rvof}"</s></l>
+<l><num>20140</num> <s><w>return</w></s></l>
+<l><num>29997</num> <s><w>rem</w> ********************</s></l>
+<l><num>29998</num> <s><w>rem</w> ** morse-alphabet **</s></l>
+<l><num>29999</num> <s><w>rem</w> ********************</s></l>
+<l><num>30000</num> <s>data32," "</s></l>
+<l><num>30010</num> <s>data34,"MNMMNM",39,"MNNNNM"</s></l>
+<l><num>30020</num> <s>data40,"NMNNM",41,"NMNNMN"</s></l>
+<l><num>30030</num> <s>data43,"MNMNM",45,"NMMMMN"</s></l>
+<l><num>30040</num> <s>data46,"MNMNMN",47,"NMMNM"</s></l>
+<l><num>30050</num> <s>data48,"NNNNN",49,"MNNNN"</s></l>
+<l><num>30060</num> <s>data50,"MMNNN",51,"MMMNN"</s></l>
+<l><num>30070</num> <s>data52,"MMMMN",53,"MMMMM"</s></l>
+<l><num>30080</num> <s>data54,"NMMMM",55,"NNMMM"</s></l>
+<l><num>30090</num> <s>data56,"NNNMM",57,"NNNNM"</s></l>
+<l><num>30100</num> <s>data44,"NNMMNN",61,"NMMMN"</s></l>
+<l><num>30110</num> <s>data63,"MMNNMM",65,"MN"</s></l>
+<l><num>30120</num> <s>data66,"NMMM",67,"NMNM"</s></l>
+<l><num>30130</num> <s>data68,"NMM",69,"M"</s></l>
+<l><num>30140</num> <s>data70,"MMNM",71,"NNM"</s></l>
+<l><num>30150</num> <s>data72,"MMMM",58,"NNNMMM"</s></l>
+<l><num>30160</num> <s>data73,"MM",74,"MNNN"</s></l>
+<l><num>30170</num> <s>data75,"NMN",76,"MNMM"</s></l>
+<l><num>30180</num> <s>data77,"NN",78,"NM"</s></l>
+<l><num>30190</num> <s>data79,"NNN",80,"MNNM"</s></l>
+<l><num>30200</num> <s>data81,"NNMN",82,"MNM"</s></l>
+<l><num>30210</num> <s>data83,"MMM",84,"N"</s></l>
+<l><num>30220</num> <s>data85,"MMN",86,"MMMN"</s></l>
+<l><num>30230</num> <s>data87,"MNN",88,"NMMN"</s></l>
+<l><num>30240</num> <s>data89,"NMNN",90,"NNMM",-1</s></l>
+<l><num>35000</num> <s><w>rem</w> ***************************</s></l>
+<l><num>35010</num> <s><w>rem</w> sys 65499 &lt;=>  ti$="000000"</s></l>
+<l><num>35020</num> <s><w>rem</w> sys 64738 &lt;=>  system reset</s></l>
+<l><num>35030</num> <s><w>rem</w> ***************************</s></l>
+<l><num>35040</num> <s><w>rem</w>     variablentabelle</s></l>
+<l><num>35050</num> <s><w>rem</w> ***************************</s></l>
+<l><num>35060</num> <s><w>rem</w> m$(x) &lt;=> morsezeichen zu x</s></l>
+<l><num>35070</num> <s><w>rem</w> g  &lt;=> morsegeschwindigkeit</s></l>
+<l><num>35080</num> <s><w>rem</w> m$,z$  &lt;=> hilfs-string</s></l>
+<l><num>35090</num> <s><w>rem</w> w  &lt;=>si</s><pc>:</pc><s>voice </s><s>i</s><pc>:</pc><s> </s><s>waveform</s></l>
+<l><num>35100</num> <s><w>rem</w> a,b,i,ii,k &lt;=> hilfszaehler</s></l>
+<l><num>35110</num> <s><w>rem</w> ti &lt;=> timer in sec/60</s></l>
+<l><num>35120</num> <s><w>rem</w> ****************************</s></l>
+<l><num>35130</num> <s><w>rem</w> abspeicherung der timerwerte</s></l>
+<l><num>35140</num> <s><w>rem</w> zum entschluesseln der morse</s></l>
+<l><num>35150</num> <s><w>rem</w> zeichen ab 49152 (dez.)</s></l>
+<l><num>35160</num> <s><w>rem</w> ****************************</s></l>
+<l><num>35170</num> <s><w>rem</w> neuer zeichensatz ab 12228</s></l>
+<l><num>35180</num> <s><w>rem</w> ****************************</s></l>
+</body>
+</text>
+</TEI>

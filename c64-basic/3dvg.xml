@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="code.css"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>Title</title>
+				<author>Uwe Weiss</author>
+				<principal>Principal</principal>
+			</titleStmt>
+			<publicationStmt>
+				<p>Publication Information</p>
+			</publicationStmt>
+			<sourceDesc>
+				<p>https://www.64er-magazin.de/8412/3d_viergewinnt.html</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text xml:space="preserve">
+<body>
+<l><num>10</num> <s><w>REM</w>        *******************</s></l>
+<l><num>11</num> <s><w>REM</w>        *                 *</s></l>
+<l><num>12</num> <s><w>REM</w>        * 3D-VIER-GEWINNT *</s></l>
+<l><num>13</num> <s><w>REM</w>        *                 *</s></l>
+<l><num>14</num> <s><w>REM</w>        *   (C) 1984 BY   *</s></l>
+<l><num>15</num> <s><w>REM</w>        *                 *</s></l>
+<l><num>16</num> <s><w>REM</w>        *    UWE WEISS    *</s></l>
+<l><num>17</num> <s><w>REM</w>        *  LOESKENWEG 60  *</s></l>
+<l><num>18</num> <s><w>REM</w>        *  4300  ESSEN 1  *</s></l>
+<l><num>19</num> <s><w>REM</w>        *                 *</s></l>
+<l><num>20</num> <s><w>REM</w>        * TEL 0201/326366 *</s></l>
+<l><num>21</num> <s><w>REM</w>        *                 *</s></l>
+<l><num>22</num> <s><w>REM</w>        *******************</s></l>
+<l><num>23</num> <s></s>:</l>
+<l><num>24</num> <s></s>:</l>
+<l><num>25</num> <s></s>:</l>
+<l><num>26</num> <s></s>:</l>
+<l><num>27</num> <s></s>:</l>
+<l><num>28</num> <s></s>:</l>
+<l><num>29</num> <s></s>:</l>
+<l><num>30</num> <s></s>:</l>
+<l><num>100</num> <s><w>GOSUB</w>1500</s><pc>:</pc><s><w>REM</w> </s><s>INITIALISIERUNG</s></l>
+<l><num>110</num> <s>ZG=0</s><pc>:</pc><s>PL=3</s><pc>:</pc><s>GW=0</s></l>
+<l><num>120</num> <s>PL=5-PL</s><pc>:</pc><s>ZG=ZG+1</s></l>
+<l><num>130</num> <s>IF(GW&lt;>0)OR(ZG>64)THEN3500</s><pc>:</pc><s><w>REM</w> </s><s>SPIELENDE</s></l>
+<l><num>140</num> <s><w>PRINT</w>CO$(PL)</s><pc>:</pc><s><w>GOSUB</w>3100</s></l>
+<l><num>141</num> <s>H=(20-LEN(SP$(PL)))/2</s><pc>:</pc><s>X0=1</s><pc>:</pc><s>Y0=24</s></l>
+<l><num>145</num> <s>X$=LEFT$(BL$,H)+SP$(PL)+LEFT$(BL$,10)</s><pc>:</pc><s><w>GOSUB</w>3010</s><pc>:</pc><s><w>PRINT</w>CHR$(19)</s></l>
+<l><num>150</num> <s>IFSP$(PL)="C 64"THEN500</s></l>
+<l><num>160</num> <s><w>REM</w> *** SPIELERZUG ***</s></l>
+<l><num>170</num> <s>X=0</s><pc>:</pc><s>Y=0</s><pc>:</pc><s>A0=1575</s></l>
+<l><num>180</num> <s>A1=1575+2*X-80*Y</s></l>
+<l><num>200</num> <s><w>POKE</w>A0,32</s><pc>:</pc><s>A0=A1</s></l>
+<l><num>210</num> <s><w>POKE</w>A1,160</s><pc>:</pc><s><w>POKE</w>A1+54272,CO(PL)</s></l>
+<l><num>220</num> <s>J=PEEK(56320)AND31</s></l>
+<l><num>230</num> <s>GETK$</s><pc>:</pc><s>K=ASC(K$+CHR$(0))</s></l>
+<l><num>235</num> <s>IF(K=0)AND(J=31)THEN220</s></l>
+<l><num>240</num> <s>IFK=133THEN350</s><pc>:</pc><s><w>REM</w> </s><s>ZUGVORSCHLAG</s></l>
+<l><num>250</num> <s>IFK=134THEN360</s><pc>:</pc><s><w>REM</w> </s><s>SEITENWECHSEL</s></l>
+<l><num>260</num> <s>IF(K=13)OR((JAND16)=0)THEN320</s></l>
+<l><num>270</num> <s>IF(K=145)OR((JAND1)=0)THENIFY&lt;3THENY=Y+1</s></l>
+<l><num>280</num> <s>IF(K=17)OR((JAND2)=0)THENIFY>0THENY=Y-1</s></l>
+<l><num>290</num> <s>IF(K=157)OR((JAND4)=0)THENIFX>0THENX=X-1</s></l>
+<l><num>300</num> <s>IF(K=29)OR((JAND8)=0)THENIFX&lt;3THENX=X+1</s></l>
+<l><num>310</num> <s><w>GOTO</w>180</s></l>
+<l><num>320</num> <s>IFBE(X,Y)=4THEN220</s></l>
+<l><num>330</num> <s><w>GOSUB</w>2500</s><pc>:</pc><s><w>REM</w> </s><s>ZUG AUSFUEHREN</s></l>
+<l><num>340</num> <s><w>GOTO</w>120</s></l>
+<l><num>350</num> <s><w>POKE</w>A1,32</s><pc>:</pc><s><w>GOSUB</w>2000</s><pc>:</pc><s>X=ZX</s><pc>:</pc><s>Y=ZY</s><pc>:</pc><s><w>GOTO</w>180</s></l>
+<l><num>360</num> <s>SP$=SP$(2)</s><pc>:</pc><s>SP$(2)=SP$(3)</s><pc>:</pc><s>SP$(3)=SP$</s><pc>:</pc><s><w>GOTO</w>140</s></l>
+<l><num>500</num> <s><w>REM</w> *** COMPUTERZUG ***</s></l>
+<l><num>510</num> <s><w>GOSUB</w>2000</s></l>
+<l><num>520</num> <s>X=ZX</s><pc>:</pc><s>Y=ZY</s></l>
+<l><num>530</num> <s>AD=1575+2*X-80*Y</s></l>
+<l><num>540</num> <s><w>POKE</w>AD,160</s><pc>:</pc><s><w>POKE</w>AD+54272,CO(PL)</s></l>
+<l><num>550</num> <s><w>GOSUB</w>2500</s><pc>:</pc><s><w>POKE</w>AD,32</s></l>
+<l><num>560</num> <s><w>GOTO</w>120</s></l>
+<l><num>1500</num> <s>IFRU=1THEN1645</s></l>
+<l><num>1505</num> <s>RU=1</s></l>
+<l><num>1510</num> <s>DIMFE(3,3,3),BE(3,3),BW(3,3),W(3,3)</s></l>
+<l><num>1511</num> <s>DIMRX(3,3),RY(3,3),RZ(3,3),MX(15)</s></l>
+<l><num>1512</num> <s>DIMUX(3),UY(3),UZ(3),OX(3),OY(3),OZ(3)</s></l>
+<l><num>1513</num> <s>DIMX$(3),W$(3),SP$(3),CO$(3),CL$(3)</s></l>
+<l><num>1514</num> <s>DIMX(3),Y(3),Z(3),SS(3),CO(3)</s></l>
+<l><num>1515</num> <s>H0$=CHR$(18)+"{SHIFT-POUND}"</s></l>
+<l><num>1516</num> <s>H1$=CHR$(17)+CHR$(157)</s></l>
+<l><num>1517</num> <s>H2$=H1$+CHR$(157)+CHR$(157)</s></l>
+<l><num>1518</num> <s>H3$=CHR$(146)+"{SHIFT-POUND}"</s></l>
+<l><num>1520</num> <s>W$(0)=H0$+H1$+"{CBM-H}"+H1$+"L{CBM-P}"+H3$</s></l>
+<l><num>1525</num> <s>W$(1)=H0$+H1$+" "+H1$+"  "+H3$</s></l>
+<l><num>1530</num> <s>W$(2)=H0$+"{CBM-H} "+H2$+"{CBM-H}L{CBM-P}"+H2$+"L{CBM-P}"+H3$</s></l>
+<l><num>1535</num> <s>W$(3)=H0$+"{CBM-H} "+H2$+" L{CBM-P}"+H2$+"  "+H3$</s></l>
+<l><num>1536</num> <s>X$(0)=W$(3)</s></l>
+<l><num>1537</num> <s>FORI=1TO3</s><pc>:</pc><s>X$(I)=W$(2)</s><pc>:</pc><s>NEXT</s></l>
+<l><num>1539</num> <s><w>PRINT</w>CHR$(147)</s><pc>:</pc><s><w>POKE</w>53280,0</s><pc>:</pc><s><w>POKE</w>53281,12</s></l>
+<l><num>1540</num> <s><w>PRINT</w>CHR$(19)CHR$(18)CHR$(144);</s></l>
+<l><num>1545</num> <s>BL$="                                        "</s></l>
+<l><num>1550</num> <s><w>PRINT</w>LEFT$(BL$,12)"3D-VIER-GEWINNT"LEFT$(BL$,13)</s></l>
+<l><num>1555</num> <s><w>PRINT</w></s><pc>:</pc><s><w>PRINT</w></s><pc>:</pc><s><w>PRINT</w></s><pc>:</pc><s><w>PRINT</w>" </s><s>BITTE WAEHLEN SIE</s><pc>:</pc><s>"</s></l>
+<l><num>1560</num> <s><w>PRINT</w></s><pc>:</pc><s><w>PRINT</w>" </s><s>1 = SCHWARZWEISSFERNSEHER"</s></l>
+<l><num>1565</num> <s><w>PRINT</w></s><pc>:</pc><s><w>PRINT</w>" </s><s>2 = FARBFERNSEHER"</s></l>
+<l><num>1570</num> <s>GETK$</s><pc>:</pc><s>K=VAL(K$)</s></l>
+<l><num>1575</num> <s>ONKGOTO1585,1605</s></l>
+<l><num>1580</num> <s><w>GOTO</w>1570</s></l>
+<l><num>1585</num> <s>CO$(2)=CHR$(5)</s><pc>:</pc><s>CO$(3)=CHR$(144)</s></l>
+<l><num>1590</num> <s>CL$(2)=CHR$(155)</s><pc>:</pc><s>CL$(3)=CHR$(151)</s></l>
+<l><num>1595</num> <s>CO(2)=1</s><pc>:</pc><s>CO(3)=0</s></l>
+<l><num>1600</num> <s><w>GOTO</w>1620</s></l>
+<l><num>1605</num> <s>CO$(2)=CHR$(28)</s><pc>:</pc><s>CO$(3)=CHR$(31)</s></l>
+<l><num>1610</num> <s>CL$(2)=CHR$(150)</s><pc>:</pc><s>CL$(3)=CHR$(154)</s></l>
+<l><num>1615</num> <s>CO(2)=2</s><pc>:</pc><s>CO(3)=6</s></l>
+<l><num>1620</num> <s>SP$(2)="C 64"</s><pc>:</pc><s>SP$(3)="C </s><s>64"</s></l>
+<l><num>1625</num> <s>S=54272</s><pc>:</pc><s><w>POKE</w>S+23,113</s><pc>:</pc><s><w>POKE</w>S+24,31</s></l>
+<l><num>1630</num> <s><w>POKE</w>S+2,0</s><pc>:</pc><s><w>POKE</w>S+3,8</s><pc>:</pc><s><w>POKE</w>S+4,0</s></l>
+<l><num>1635</num> <s><w>POKE</w>S+5,21</s><pc>:</pc><s><w>POKE</w>S+6,240</s></l>
+<l><num>1640</num> <s><w>GOTO</w>1670</s></l>
+<l><num>1645</num> <s>SP$=SP$(2)</s><pc>:</pc><s>SP$(2)=SP$(3)</s><pc>:</pc><s>SP$(3)=SP$</s></l>
+<l><num>1650</num> <s>FORI=0TO3</s><pc>:</pc><s>FORJ=0TO3</s></l>
+<l><num>1655</num> <s>BE(I,J)=0</s></l>
+<l><num>1660</num> <s>FORK=1TO3</s><pc>:</pc><s>FE(I,J,K)=0</s></l>
+<l><num>1665</num> <s>NEXTK,J,I</s></l>
+<l><num>1670</num> <s><w>PRINT</w>CHR$(147)CHR$(18)CHR$(144);</s></l>
+<l><num>1675</num> <s><w>PRINT</w>"F1</s><pc>:</pc><s>ZUGVORSCHLAG";LEFT$(BL$,9);"F3</s><pc>:</pc><s>SEITENWECHSEL"</s></l>
+<l><num>1680</num> <s><w>PRINT</w>CHR$(5)</s></l>
+<l><num>1685</num> <s>FORI=1TO4</s></l>
+<l><num>1690</num> <s><w>PRINT</w></s><pc>:</pc><s><w>PRINT</w></s><pc>:</pc><s><w>PRINT</w></s></l>
+<l><num>1695</num> <s><w>PRINT</w>" OP    OP    OP    OP"</s></l>
+<l><num>1700</num> <s><w>PRINT</w>" L{SHIFT-@}    L{SHIFT-@}    L{SHIFT-@}    L{SHIFT-@}"</s><pc>:</pc><s>NEXT</s></l>
+<l><num>1705</num> <s>FORI=2TO3</s></l>
+<l><num>1710</num> <s><w>PRINT</w>CHR$(19)</s></l>
+<l><num>1715</num> <s><w>PRINT</w>CO$(I)"SPIELER";I-1;"  "SP$(I);BL$</s></l>
+<l><num>1720</num> <s><w>PRINT</w>CHR$(145)CHR$(145);SPC(9)" ";</s></l>
+<l><num>1725</num> <s>INPUTSP$(I)</s></l>
+<l><num>1730</num> <s>SS(I)=1</s></l>
+<l><num>1735</num> <s>IFSP$(I)&lt;>"C 64"THEN1755</s></l>
+<l><num>1740</num> <s><w>PRINT</w>"SPIELSTAERKE 1/2"</s></l>
+<l><num>1745</num> <s>GETK$</s><pc>:</pc><s>IFK$="2"THENSS(I)=2</s><pc>:</pc><s><w>GOTO</w>1755</s></l>
+<l><num>1750</num> <s>IFK$&lt;>"1"THEN1745</s></l>
+<l><num>1755</num> <s><w>PRINT</w>CHR$(19)</s></l>
+<l><num>1760</num> <s><w>PRINT</w>LEFT$(BL$,30)</s><pc>:</pc><s><w>PRINT</w>LEFT$(BL$,30)</s></l>
+<l><num>1765</num> <s>NEXT</s></l>
+<l><num>1770</num> <s>FORI=0TO3</s><pc>:</pc><s>FORJ=0TO3</s></l>
+<l><num>1775</num> <s>RX(I,J)=1/16</s><pc>:</pc><s>RY(I,J)=1/16</s><pc>:</pc><s>RZ(I,J)=1/8</s><pc>:</pc><s>FE(I,J,0)=1</s></l>
+<l><num>1780</num> <s>NEXT</s><pc>:</pc><s>NEXT</s></l>
+<l><num>1785</num> <s>FORI=0TO3</s></l>
+<l><num>1790</num> <s>RX(I,0)=1</s><pc>:</pc><s>RY(I,0)=1</s></l>
+<l><num>1795</num> <s>UX(I)=1/8</s><pc>:</pc><s>UY(I)=1/8</s><pc>:</pc><s>UZ(I)=1/16</s></l>
+<l><num>1800</num> <s>OX(I)=1/8</s><pc>:</pc><s>OY(I)=1/8</s><pc>:</pc><s>OZ(I)=1/16</s></l>
+<l><num>1805</num> <s>NEXT</s></l>
+<l><num>1810</num> <s>UZ(0)=1</s><pc>:</pc><s>OZ(0)=1</s></l>
+<l><num>1815</num> <s>D1=1/8</s><pc>:</pc><s>D2=D1</s><pc>:</pc><s>D3=D1</s><pc>:</pc><s>D4=D1</s></l>
+<l><num>1820</num> <s><w>RETURN</w></s></l>
+<l><num>2000</num> <s>XX=0</s><pc>:</pc><s><w>GOSUB</w>2200</s></l>
+<l><num>2010</num> <s>IFSS(PL)=1THEN2100</s></l>
+<l><num>2020</num> <s>FORI=0TO3</s><pc>:</pc><s>FORJ=0TO3</s></l>
+<l><num>2030</num> <s>W(I,J)=BW(I,J)</s></l>
+<l><num>2040</num> <s>NEXT</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2050</num> <s>XX=1</s><pc>:</pc><s><w>GOSUB</w>2200</s></l>
+<l><num>2060</num> <s>FORI=0TO3</s><pc>:</pc><s>FORJ=0TO3</s></l>
+<l><num>2070</num> <s>BW=BW(I,J)</s><pc>:</pc><s>BW(I,J)=W(I,J)</s></l>
+<l><num>2080</num> <s>IF(W(I,J)&lt;64)AND(BW>0)THENBW(I,J)=BW(I,J)-BW/2</s></l>
+<l><num>2090</num> <s>NEXT</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2100</num> <s>MAX=-5000</s><pc>:</pc><s>H=0</s></l>
+<l><num>2110</num> <s>FORI=0TO3</s><pc>:</pc><s>FORJ=0TO3</s></l>
+<l><num>2120</num> <s>BW=BW(I,J)</s></l>
+<l><num>2130</num> <s>IFBW=MAXTHENMX(H)=10*I+J</s><pc>:</pc><s>H=H+1</s></l>
+<l><num>2140</num> <s>IFBW>MAXTHENH=1</s><pc>:</pc><s>MX(0)=10*I+J</s><pc>:</pc><s>MAX=BW</s></l>
+<l><num>2150</num> <s>NEXT</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2160</num> <s>ZZ=INT(RND(0)*(H))</s></l>
+<l><num>2170</num> <s>ZX=INT(MX(ZZ)/10)</s><pc>:</pc><s>ZY=MX(ZZ)-ZX*10</s></l>
+<l><num>2180</num> <s><w>RETURN</w></s></l>
+<l><num>2200</num> <s>FORY=0TO3</s><pc>:</pc><s>FORX=0TO3</s><pc>:</pc><s>BW=0</s></l>
+<l><num>2210</num> <s>Z=BE(X,Y)+XX</s><pc>:</pc><s>AD=1575+2*X-80*Y</s><pc>:</pc><s><w>POKE</w>AD,160</s><pc>:</pc><s><w>POKE</w>AD+54272,CO(PL)</s></l>
+<l><num>2220</num> <s>IFZ>3THENBW=-10000</s><pc>:</pc><s><w>GOTO</w>2350</s></l>
+<l><num>2230</num> <s>BW=BW+RX(Y,Z)+RY(X,Z)+RZ(X,Y)</s></l>
+<l><num>2240</num> <s>IFY=ZTHENBW=BW+UX(X)</s></l>
+<l><num>2250</num> <s>IFX=ZTHENBW=BW+UY(Y)</s></l>
+<l><num>2260</num> <s>IFX=YTHENBW=BW+UZ(Z)</s></l>
+<l><num>2270</num> <s>IFY=3-ZTHENBW=BW+OX(X)</s></l>
+<l><num>2280</num> <s>IFX=3-ZTHENBW=BW+OY(Y)</s></l>
+<l><num>2290</num> <s>IFX=3-YTHENBW=BW+OZ(Z)</s></l>
+<l><num>2300</num> <s>IF(X=Y)AND(X=Z)THENBW=BW+D1</s></l>
+<l><num>2310</num> <s>IF(X=3-Y)AND(X=Z)THENBW=BW+D2</s></l>
+<l><num>2320</num> <s>IF(X=Y)AND(X=3-Z)THENBW=BW+D3</s></l>
+<l><num>2330</num> <s>IF(Y=Z)AND(X=3-Z)THENBW=BW+D4</s></l>
+<l><num>2340</num> <s>H0=BW*1E4-INT(BW*1E4)</s></l>
+<l><num>2345</num> <s>IFBW>64THENBW=64</s></l>
+<l><num>2346</num> <s>IFABS(H0-PL/10)&lt;0.05THENBW=65</s></l>
+<l><num>2350</num> <s>BW(X,Y)=BW</s></l>
+<l><num>2360</num> <s><w>POKE</w>AD,32</s></l>
+<l><num>2370</num> <s>NEXT</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2380</num> <s><w>RETURN</w></s></l>
+<l><num>2500</num> <s>Z=BE(X,Y)</s><pc>:</pc><s>BE(X,Y)=Z+1</s></l>
+<l><num>2505</num> <s>F=1114</s><pc>:</pc><s>D=3</s><pc>:</pc><s><w>GOSUB</w>3800</s></l>
+<l><num>2510</num> <s>FE(X,Y,Z)=PL</s></l>
+<l><num>2520</num> <s>IFZ&lt;>3THENFE(X,Y,Z+1)=1</s></l>
+<l><num>2530</num> <s><w>PRINT</w>CO$(PL)</s><pc>:</pc><s>X$=X$(Z)</s><pc>:</pc><s><w>GOSUB</w>3000</s></l>
+<l><num>2540</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2541</num> <s>H9=FE(I,Y,Z)</s><pc>:</pc><s>X(I)=I</s><pc>:</pc><s>Y(I)=Y</s><pc>:</pc><s>Z(I)=Z</s></l>
+<l><num>2542</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2543</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>RX(Y,Z)=H</s></l>
+<l><num>2550</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2551</num> <s>H9=FE(X,I,Z)</s><pc>:</pc><s>X(I)=X</s><pc>:</pc><s>Y(I)=I</s><pc>:</pc><s>Z(I)=Z</s></l>
+<l><num>2552</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2553</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>RY(X,Z)=H</s></l>
+<l><num>2560</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2561</num> <s>H9=FE(X,Y,I)</s><pc>:</pc><s>X(I)=X</s><pc>:</pc><s>Y(I)=Y</s><pc>:</pc><s>Z(I)=I</s></l>
+<l><num>2562</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2563</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>RZ(X,Y)=H</s></l>
+<l><num>2570</num> <s>IFY&lt;>ZTHEN2580</s></l>
+<l><num>2571</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2572</num> <s>H9=FE(X,I,I)</s><pc>:</pc><s>X(I)=X</s><pc>:</pc><s>Y(I)=I</s><pc>:</pc><s>Z(I)=I</s></l>
+<l><num>2573</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2574</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>UX(X)=H</s></l>
+<l><num>2580</num> <s>IFX&lt;>ZTHEN2590</s></l>
+<l><num>2581</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2582</num> <s>H9=FE(I,Y,I)</s><pc>:</pc><s>X(I)=I</s><pc>:</pc><s>Y(I)=Y</s><pc>:</pc><s>Z(I)=I</s></l>
+<l><num>2583</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2584</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>UY(Y)=H</s></l>
+<l><num>2590</num> <s>IFX&lt;>YTHEN2600</s></l>
+<l><num>2591</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2592</num> <s>H9=FE(I,I,Z)</s><pc>:</pc><s>X(I)=I</s><pc>:</pc><s>Y(I)=I</s><pc>:</pc><s>Z(I)=Z</s></l>
+<l><num>2593</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2594</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>UZ(Z)=H</s></l>
+<l><num>2600</num> <s>IFY&lt;>3-ZTHEN2610</s></l>
+<l><num>2601</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2602</num> <s>H9=FE(X,I,3-I)</s><pc>:</pc><s>X(I)=X</s><pc>:</pc><s>Y(I)=I</s><pc>:</pc><s>Z(I)=3-I</s></l>
+<l><num>2603</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2604</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>OX(X)=H</s></l>
+<l><num>2610</num> <s>IFX&lt;>3-ZTHEN2620</s></l>
+<l><num>2611</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2612</num> <s>H9=FE(I,Y,3-I)</s><pc>:</pc><s>X(I)=I</s><pc>:</pc><s>Y(I)=Y</s><pc>:</pc><s>Z(I)=3-I</s></l>
+<l><num>2613</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2614</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>OY(Y)=H</s></l>
+<l><num>2620</num> <s>IFX&lt;>3-YTHEN2630</s></l>
+<l><num>2621</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2622</num> <s>H9=FE(I,3-I,Z)</s><pc>:</pc><s>X(I)=I</s><pc>:</pc><s>Y(I)=3-I</s><pc>:</pc><s>Z(I)=Z</s></l>
+<l><num>2623</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2624</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>OZ(Z)=H</s></l>
+<l><num>2630</num> <s>IF(X&lt;>Y)OR(X&lt;>Z)THEN2640</s></l>
+<l><num>2631</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2632</num> <s>H9=FE(I,I,I)</s><pc>:</pc><s>X(I)=I</s><pc>:</pc><s>Y(I)=I</s><pc>:</pc><s>Z(I)=I</s></l>
+<l><num>2633</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2634</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>D1=H</s></l>
+<l><num>2640</num> <s>IF(X&lt;>3-Y)OR(X&lt;>Z)THEN2650</s></l>
+<l><num>2641</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2642</num> <s>H9=FE(I,3-I,I)</s><pc>:</pc><s>X(I)=I</s><pc>:</pc><s>Y(I)=3-I</s><pc>:</pc><s>Z(I)=I</s></l>
+<l><num>2643</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2644</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>D2=H</s></l>
+<l><num>2650</num> <s>IF(X&lt;>Y)OR(X&lt;>3-Z)THEN2660</s></l>
+<l><num>2651</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2652</num> <s>H9=FE(I,I,3-I)</s><pc>:</pc><s>X(I)=I</s><pc>:</pc><s>Y(I)=I</s><pc>:</pc><s>Z(I)=3-I</s></l>
+<l><num>2653</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2654</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>D3=H</s></l>
+<l><num>2660</num> <s>IF(Y&lt;>Z)OR(X&lt;>3-Z)THEN2670</s></l>
+<l><num>2661</num> <s>H=1</s><pc>:</pc><s>Q=0</s><pc>:</pc><s>FORI=0TO3</s></l>
+<l><num>2662</num> <s>H9=FE(3-I,I,I)</s><pc>:</pc><s>X(I)=3-I</s><pc>:</pc><s>Y(I)=I</s><pc>:</pc><s>Z(I)=I</s></l>
+<l><num>2663</num> <s><w>GOSUB</w>2800</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2664</num> <s><w>GOSUB</w>2900</s><pc>:</pc><s>D4=H</s></l>
+<l><num>2670</num> <s>Z=Z+1</s><pc>:</pc><s>IFZ=4THEN2700</s></l>
+<l><num>2680</num> <s>RX(Y,Z)=RX(Y,Z)*2</s></l>
+<l><num>2681</num> <s>RY(X,Z)=RY(X,Z)*2</s></l>
+<l><num>2682</num> <s>IFY=ZTHENUX(X)=UX(X)*2</s></l>
+<l><num>2683</num> <s>IFX=ZTHENUY(Y)=UY(Y)*2</s></l>
+<l><num>2684</num> <s>IFX=YTHENUZ(Z)=UZ(Z)*2</s></l>
+<l><num>2685</num> <s>IFY=3-ZTHENOX(X)=OX(X)*2</s></l>
+<l><num>2686</num> <s>IFX=3-ZTHENOY(Y)=OY(Y)*2</s></l>
+<l><num>2687</num> <s>IFX=3-YTHENOZ(Z)=OZ(Z)*2</s></l>
+<l><num>2688</num> <s>IF(X=Y)AND(X=Z)THEND1=2*D1</s></l>
+<l><num>2689</num> <s>IF(X=3-Y)AND(X=Z)THEND2=2*D2</s></l>
+<l><num>2690</num> <s>IF(X=Y)AND(X=3-Z)THEND3=2*D3</s></l>
+<l><num>2691</num> <s>IF(Y=Z)AND(X=3-Z)THEND4=2*D4</s></l>
+<l><num>2700</num> <s><w>RETURN</w></s></l>
+<l><num>2800</num> <s>IFH9=0THENH=H/2</s><pc>:</pc><s><w>RETURN</w></s></l>
+<l><num>2810</num> <s>IFH9=1THENRETURN</s></l>
+<l><num>2820</num> <s>IF(Q&lt;2)OR(H9=Q)THENH=H*4</s><pc>:</pc><s>Q=H9</s><pc>:</pc><s><w>RETURN</w></s></l>
+<l><num>2830</num> <s>H=0</s><pc>:</pc><s><w>RETURN</w></s></l>
+<l><num>2900</num> <s>IFH=64THENH=H+PL/1E5</s></l>
+<l><num>2910</num> <s>IFH&lt;>256THENRETURN</s></l>
+<l><num>2920</num> <s>FORJ=0TO3</s><pc>:</pc><s>GX(J)=X(J)</s><pc>:</pc><s>GY(J)=Y(J)</s><pc>:</pc><s>GZ(J)=Z(J)</s><pc>:</pc><s>NEXT</s></l>
+<l><num>2930</num> <s>GW=PL</s><pc>:</pc><s><w>RETURN</w></s></l>
+<l><num>3000</num> <s>X0=6*X+Z+1</s><pc>:</pc><s>Y0=20-5*Y-Z</s></l>
+<l><num>3010</num> <s><w>POKE</w>211,X0</s><pc>:</pc><s><w>POKE</w>214,Y0</s><pc>:</pc><s>SYS58732</s></l>
+<l><num>3020</num> <s><w>PRINT</w>X$;</s><pc>:</pc><s><w>RETURN</w></s></l>
+<l><num>3100</num> <s><w>POKE</w>214,6</s><pc>:</pc><s><w>POKE</w>211,30</s><pc>:</pc><s>SYS58732</s></l>
+<l><num>3110</num> <s><w>PRINT</w>"{CBM-A}{SHIFT-*}{CBM-R}{SHIFT-*}{CBM-R}{SHIFT-*}{CBM-R}{SHIFT-*}{CBM-S}"</s></l>
+<l><num>3120</num> <s><w>GOSUB</w>3180</s><pc>:</pc><s><w>PRINT</w>"{SHIFT--} </s><s>{SHIFT--} {SHIFT--} {SHIFT--} {SHIFT--}"</s></l>
+<l><num>3130</num> <s>FORI=1TO3</s></l>
+<l><num>3140</num> <s><w>GOSUB</w>3180</s><pc>:</pc><s><w>PRINT</w>"{CBM-Q}{SHIFT-*}{SHIFT-+}{SHIFT-*}{SHIFT-+}{SHIFT-*}{SHIFT-+}{SHIFT-*}{CBM-W}"</s></l>
+<l><num>3150</num> <s><w>GOSUB</w>3180</s><pc>:</pc><s><w>PRINT</w>"{SHIFT--} </s><s>{SHIFT--} {SHIFT--} {SHIFT--} {SHIFT--}"</s><pc>:</pc><s>NEXT</s></l>
+<l><num>3160</num> <s><w>GOSUB</w>3180</s><pc>:</pc><s><w>PRINT</w>"{CBM-Z}{SHIFT-*}{CBM-E}{SHIFT-*}{CBM-E}{SHIFT-*}{CBM-E}{SHIFT-*}{CBM-X}"</s></l>
+<l><num>3170</num> <s><w>RETURN</w></s></l>
+<l><num>3180</num> <s><w>POKE</w>211,30</s><pc>:</pc><s>SYS58732</s><pc>:</pc><s><w>RETURN</w></s></l>
+<l><num>3500</num> <s>X$=CHR$(144)+CHR$(18)</s></l>
+<l><num>3510</num> <s>IFGW&lt;>0THEN3540</s></l>
+<l><num>3520</num> <s>X$=X$+LEFT$(BL$,13)+"UNENTSCHIEDEN!"+LEFT$(BL$,13)</s></l>
+<l><num>3530</num> <s><w>GOTO</w>3580</s></l>
+<l><num>3540</num> <s>H$="SIEGER</s><pc>:</pc><s> </s><s>"+SP$(GW)</s><pc>:</pc><s>H=LEN(H$)</s></l>
+<l><num>3550</num> <s>IFH>40THENH$=LEFT$(H$,40)</s><pc>:</pc><s>H=40</s></l>
+<l><num>3560</num> <s>H=(40-H)/2</s></l>
+<l><num>3570</num> <s>X$=X$+LEFT$(BL$,H)+H$+LEFT$(BL$,H+.5)</s></l>
+<l><num>3580</num> <s><w>PRINT</w>CHR$(19);X$</s><pc>:</pc><s><w>PRINT</w>CHR$(19)</s></l>
+<l><num>3590</num> <s>F=4455</s><pc>:</pc><s>D=7</s><pc>:</pc><s><w>GOSUB</w>3800</s></l>
+<l><num>3591</num> <s>F=5001</s><pc>:</pc><s>D=7</s><pc>:</pc><s><w>GOSUB</w>3800</s></l>
+<l><num>3592</num> <s>F=5613</s><pc>:</pc><s>D=7</s><pc>:</pc><s><w>GOSUB</w>3800</s></l>
+<l><num>3593</num> <s>F=5947</s><pc>:</pc><s>D=20</s><pc>:</pc><s><w>GOSUB</w>3800</s></l>
+<l><num>3594</num> <s>F=4455</s><pc>:</pc><s>D=20</s><pc>:</pc><s><w>GOSUB</w>3800</s></l>
+<l><num>3595</num> <s>F=5947</s><pc>:</pc><s>D=20</s><pc>:</pc><s><w>GOSUB</w>3800</s></l>
+<l><num>3596</num> <s>F=4455</s><pc>:</pc><s>D=20</s><pc>:</pc><s><w>GOSUB</w>3800</s></l>
+<l><num>3597</num> <s>F=5947</s><pc>:</pc><s>D=50</s><pc>:</pc><s><w>GOSUB</w>3800</s></l>
+<l><num>3600</num> <s>IFGW&lt;>0THEN3620</s></l>
+<l><num>3610</num> <s><w>POKE</w>198,0</s><pc>:</pc><s>WAIT198,1</s><pc>:</pc><s><w>POKE</w>198,0</s><pc>:</pc><s><w>GOTO</w>100</s></l>
+<l><num>3620</num> <s><w>PRINT</w>CO$(GW)</s><pc>:</pc><s><w>GOSUB</w>3750</s></l>
+<l><num>3630</num> <s>T=TI</s></l>
+<l><num>3640</num> <s>GETK$</s><pc>:</pc><s>IFK$&lt;>""THEN100</s></l>
+<l><num>3650</num> <s>IFTI-T&lt;30THEN3640</s></l>
+<l><num>3660</num> <s><w>PRINT</w>CL$(GW)</s><pc>:</pc><s><w>GOSUB</w>3750</s></l>
+<l><num>3670</num> <s>T=TI</s></l>
+<l><num>3680</num> <s>GETK$</s><pc>:</pc><s>IFK$&lt;>""THEN100</s></l>
+<l><num>3690</num> <s>IFTI-T&lt;30THEN3680</s></l>
+<l><num>3700</num> <s><w>GOTO</w>3620</s></l>
+<l><num>3750</num> <s>FORI=0TO3</s></l>
+<l><num>3760</num> <s>X=GX(I)</s><pc>:</pc><s>Y=GY(I)</s><pc>:</pc><s>Z=GZ(I)</s><pc>:</pc><s>H=0</s></l>
+<l><num>3770</num> <s>IFZ=0THENH=H+1</s></l>
+<l><num>3780</num> <s>IFZ+1=BE(X,Y)THENH=H+2</s></l>
+<l><num>3790</num> <s>X$=W$(H)</s><pc>:</pc><s><w>GOSUB</w>3000</s></l>
+<l><num>3795</num> <s>NEXT</s><pc>:</pc><s><w>RETURN</w></s></l>
+<l><num>3800</num> <s>F0=INT(F/256)</s><pc>:</pc><s><w>POKE</w>54272,F-256*F0</s></l>
+<l><num>3810</num> <s><w>POKE</w>54273,F0</s><pc>:</pc><s><w>POKE</w>54276,65</s></l>
+<l><num>3820</num> <s>T=TI</s></l>
+<l><num>3830</num> <s>IFTI-T&lt;DTHEN3830</s></l>
+<l><num>3840</num> <s><w>POKE</w>54276,0</s><pc>:</pc><s><w>RETURN</w></s></l>
+</body>
+</text>
+</TEI>

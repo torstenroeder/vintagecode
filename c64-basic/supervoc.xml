@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="code.css"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>Title</title>
+			</titleStmt>
+			<publicationStmt>
+				<p>Publication Information</p>
+			</publicationStmt>
+			<sourceDesc>
+				<p>https://www.64er-magazin.de/8406/supervoc.html</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+<text xml:space="preserve">
+<body>
+<l><num>0</num> <s><w>rem</w> ********************************* *****              **              *****</s></l>
+<l><num>1</num> <s><w>rem</w> * michael schmidt * 1984 * msc. *      ****                      ****</s></l>
+<l><num>2</num> <s><w>rem</w> *  b a d i s c h e   6 4 ' e r  *    **     ******* msc. *******     **</s></l>
+<l><num>3</num> <s><w>rem</w> *   supervoc.   * commodore 64  *      ****                      ****</s></l>
+<l><num>4</num> <s><w>rem</w> ********************************* *****  badische    ** 64'er  1984  *****</s></l>
+<l><num>10</num> <s><w>gosub</w>5500</s><pc>:</pc><s><w>poke</w>198,0</s><pc>:</pc><s>wait198,1</s></l>
+<l><num>15</num> <s><w>poke</w>32768,96</s><pc>:</pc><s><w>poke</w>650,234</s></l>
+<l><num>20</num> <s>dimv$(50,4)</s><pc>:</pc><s>pf=1732</s><pc>:</pc><s>pr=1727</s><pc>:</pc><s>sy=1</s></l>
+<l><num>30</num> <s><w>print</w>"{clr}"</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w></s></l>
+<l><num>35</num> <s><w>print</w>"  vokabeln von kassette ( j / n )?"</s></l>
+<l><num>40</num> <s>geta$</s><pc>:</pc><s>ifa$="j"thengosub2000</s><pc>:</pc><s><w>gosub</w>3000</s><pc>:</pc><s><w>goto</w>720</s></l>
+<l><num>50</num> <s>ifa$="n"thengosub3500</s><pc>:</pc><s><w>gosub</w>3000</s><pc>:</pc><s><w>goto</w>720</s></l>
+<l><num>52</num> <s><w>goto</w>40</s></l>
+<l><num>80</num> <s><w>gosub</w>1000</s></l>
+<l><num>200</num> <s>n=n(rnd(ti)*9)</s><pc>:</pc><s>r=0</s><pc>:</pc><s>f=0</s><pc>:</pc><s>pr=1727</s><pc>:</pc><s>pf=1732</s></l>
+<l><num>295</num> <s>m=0</s></l>
+<l><num>300</num> <s>z=z+1</s><pc>:</pc><s>m=m+n</s><pc>:</pc><s>ifm>50thenm=m-50</s></l>
+<l><num>302</num> <s>ifm=nthenm1=m1+1</s><pc>:</pc><s>ifm1=2thenm1=0</s><pc>:</pc><s>z=0</s><pc>:</pc><s><w>goto</w>700</s></l>
+<l><num>305</num> <s><w>poke</w>214,2</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>tab(4)"{lblu} </s><s>              "</s></l>
+<l><num>307</num> <s><w>poke</w>214,1</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>tab(34)z</s></l>
+<l><num>310</num> <s>ifv$(m,1)="*"then300</s></l>
+<l><num>312</num> <s>ifsx=1thensy=int(rnd(ti)*2+1)</s></l>
+<l><num>315</num> <s><w>poke</w>214,7</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>tab(4)" </s><s>              "</s></l>
+<l><num>320</num> <s><w>poke</w>214,2</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>tab(4)v$(m,sy);" </s><s>?"</s></l>
+<l><num>325</num> <s><w>poke</w>214,7</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s>b$=""</s></l>
+<l><num>330</num> <s>fori=1to15</s></l>
+<l><num>333</num> <s><w>poke</w>198,0</s><pc>:</pc><s>wait198,1</s><pc>:</pc><s>geta$</s></l>
+<l><num>335</num> <s>ifa$="{home}"thenpoke214,7</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>tab(4)" </s><s>              {up}"</s><pc>:</pc><s>b$=""</s><pc>:</pc><s><w>goto</w>330</s></l>
+<l><num>340</num> <s>ifasc(a$)=13then400</s></l>
+<l><num>345</num> <s>ifa$="{del}"ora$="{clr}"ora$="{inst}"ora$="{down}"ora$="{up}"ora$="{rght}"ora$="{left}"then333</s></l>
+<l><num>350</num> <s><w>print</w>tab(4)a$;</s></l>
+<l><num>360</num> <s>b$=b$+a$</s></l>
+<l><num>370</num> <s>next</s></l>
+<l><num>400</num> <s>ifsy=2then430</s></l>
+<l><num>410</num> <s>forj=2to4</s><pc>:</pc><s>ifv$(m,j)&lt;>b$orb$=""thennext</s><pc>:</pc><s><w>goto</w>500</s></l>
+<l><num>420</num> <s><w>goto</w>600</s></l>
+<l><num>430</num> <s>ifv$(m,1)=b$then600</s></l>
+<l><num>440</num> <s><w>goto</w>500</s></l>
+<l><num>500</num> <s>fz=fz+1</s></l>
+<l><num>515</num> <s><w>poke</w>214,12</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>tab(7)"{rvon} </s><s>falsch* "</s></l>
+<l><num>520</num> <s>forj=1to255</s><pc>:</pc><s>next</s><pc>:</pc><s><w>poke</w>214,12</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>tab(7)"{rvof} </s><s>falsch* "</s></l>
+<l><num>530</num> <s><w>print</w>"{blk}"</s></l>
+<l><num>540</num> <s>f=f+1</s><pc>:</pc><s>iff>3thenf=1</s><pc>:</pc><s>pf=pf-40</s></l>
+<l><num>550</num> <s>fori=pftopf+2</s><pc>:</pc><s><w>poke</w>i,f(f)</s><pc>:</pc><s><w>poke</w>54272+i,0</s><pc>:</pc><s>next</s></l>
+<l><num>565</num> <s><w>poke</w>214,20</s><pc>:</pc><s><w>print</w>"{blk}"</s><pc>:</pc><s>mm=0</s></l>
+<l><num>570</num> <s>fori=3to5</s><pc>:</pc><s><w>print</w>" </s><s></s><pc>:</pc><s> </s><s>";</s><pc>:</pc><s>forj=1tolen(v$(m,i-sy))</s></l>
+<l><num>575</num> <s>mm=mm+1</s></l>
+<l><num>580</num> <s><w>print</w>mid$(v$(m,i-sy),j,1);</s></l>
+<l><num>585</num> <s>fork=1to100</s><pc>:</pc><s>next</s><pc>:</pc><s>next</s><pc>:</pc><s>next</s></l>
+<l><num>590</num> <s>fori=mmto31</s><pc>:</pc><s><w>print</w>" </s><s>";</s><pc>:</pc><s>next</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>goto</w>300</s></l>
+<l><num>600</num> <s>rz=rz+1</s></l>
+<l><num>615</num> <s><w>poke</w>214,12</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>tab(7)"{rvon} </s><s>richtig "</s></l>
+<l><num>620</num> <s>fork=1to255</s><pc>:</pc><s>next</s><pc>:</pc><s><w>poke</w>214,12</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>tab(7)"{rvof} </s><s>richtig "</s></l>
+<l><num>630</num> <s><w>print</w>"{blk}"</s></l>
+<l><num>640</num> <s>r=r+1</s><pc>:</pc><s>ifr>3thenr=1</s><pc>:</pc><s>pr=pr-40</s></l>
+<l><num>650</num> <s>fori=prtopr+2</s><pc>:</pc><s><w>poke</w>i,r(r)</s><pc>:</pc><s><w>poke</w>54272+i,0</s><pc>:</pc><s>next</s></l>
+<l><num>660</num> <s><w>poke</w>214,20</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>" </s><s>                                       ";</s></l>
+<l><num>665</num> <s><w>print</w>"{lblu} RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"</s><pc>:</pc><s><w>goto</w>300</s></l>
+<l><num>670</num> <s><w>goto</w>300</s></l>
+<l><num>700</num> <s><w>print</w>"{lblu}"</s></l>
+<l><num>705</num> <s>iffz&lt;2then780</s></l>
+<l><num>710</num> <s><w>gosub</w>800</s></l>
+<l><num>720</num> <s>rz=0</s><pc>:</pc><s>fz=0</s></l>
+<l><num>730</num> <s><w>gosub</w>5000</s></l>
+<l><num>740</num> <s>geta$</s><pc>:</pc><s>ifa$="y"thengosub1000</s><pc>:</pc><s><w>goto</w>200</s></l>
+<l><num>750</num> <s>ifa$="s"thengosub2500</s><pc>:</pc><s><w>goto</w>720</s></l>
+<l><num>760</num> <s>ifa$="c"thengosub4000</s><pc>:</pc><s><w>goto</w>720</s></l>
+<l><num>765</num> <s>ifa$="l"thenrun20</s></l>
+<l><num>770</num> <s><w>goto</w>740</s></l>
+<l><num>780</num> <s>ifsy=2andsz=0thensz=1</s><pc>:</pc><s><w>gosub</w>900</s><pc>:</pc><s>sx=1</s><pc>:</pc><s><w>goto</w>720</s></l>
+<l><num>783</num> <s>if sz=1then950</s></l>
+<l><num>785</num> <s><w>gosub</w>860</s></l>
+<l><num>790</num> <s>sy=2</s></l>
+<l><num>795</num> <s><w>goto</w>730</s></l>
+<l><num>800</num> <s><w>print</w>"{clr}{down}{down}{down}"</s><pc>:</pc><s><w>print</w>" </s><s>von "fz+rz" haben sie{down}{down}"</s></l>
+<l><num>810</num> <s><w>print</w>tab(10)rz"richtig    und{down}{down}"</s></l>
+<l><num>820</num> <s><w>print</w>tab(10)fz"falsch {down}{down}{down}"</s></l>
+<l><num>830</num> <s><w>print</w>"ich schlage ihnen vor die vokabeln{down}"</s></l>
+<l><num>840</num> <s><w>print</w>"noch einmal zu wiederholen"</s></l>
+<l><num>850</num> <s>fori=1984to2023</s><pc>:</pc><s><w>poke</w>i,160</s><pc>:</pc><s><w>poke</w>54272+i,14</s><pc>:</pc><s>forj=1to100</s><pc>:</pc><s>next</s><pc>:</pc><s>next</s><pc>:</pc><s><w>return</w></s></l>
+<l><num>860</num> <s><w>print</w>"{clr}{down}{down}{down}  bravo!{down}{down}"</s><pc>:</pc><s><w>print</w>"sie </s><s>haben von"fz+rz"vokabeln{down}{down}"</s></l>
+<l><num>870</num> <s><w>print</w>tab(10)rz" gewusst{down}{down}{down}"</s></l>
+<l><num>880</num> <s><w>print</w>"ich hore sie jetzt umgekehrt ab"</s></l>
+<l><num>890</num> <s>fori=1984to2023</s><pc>:</pc><s><w>poke</w>i,160</s><pc>:</pc><s><w>poke</w>54272+i,14</s><pc>:</pc><s>forj=1to100</s><pc>:</pc><s>next</s><pc>:</pc><s>next</s><pc>:</pc><s><w>return</w></s></l>
+<l><num>900</num> <s><w>print</w>"{clr}{down}{down}{down}  dritte runde{down}{down}{down}"</s></l>
+<l><num>910</num> <s><w>print</w>rz" richtige "fz" falsche{$a0}{down}{down}{down}"</s></l>
+<l><num>920</num> <s><w>print</w>"und jetzt geht's durcheinander"</s></l>
+<l><num>930</num> <s>fori=1984to2023</s><pc>:</pc><s><w>poke</w>i,160</s><pc>:</pc><s><w>poke</w>54272+i,14</s><pc>:</pc><s>forj=1to100</s><pc>:</pc><s>next</s><pc>:</pc><s>next</s><pc>:</pc><s><w>return</w></s></l>
+<l><num>950</num> <s><w>print</w>"{clr}{down}{down}{down}so, das duerfte genuegen!{down}{down}{down}"</s></l>
+<l><num>960</num> <s><w>print</w>"wiederholen sie diese vokabeln {down}{down}"</s></l>
+<l><num>970</num> <s><w>print</w>"in ca 3-4 wochen{down}{down}{down}"</s></l>
+<l><num>980</num> <s><w>print</w>n$"  verabschiedet sich !</s></l>
+<l><num>990</num> <s>fori=1to4000</s><pc>:</pc><s>next</s><pc>:</pc><s>run</s></l>
+<l><num>1000</num> <s><w>print</w>"{clr}"</s></l>
+<l><num>1010</num> <s>fori=1to2</s></l>
+<l><num>1020</num> <s><w>print</w>"   U{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}I"</s></l>
+<l><num>1030</num> <s>forj=1to3</s></l>
+<l><num>1040</num> <s><w>print</w>"   {SHIFT--}                 {SHIFT--}"</s></l>
+<l><num>1050</num> <s>next</s></l>
+<l><num>1060</num> <s><w>print</w>"   J{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}K"</s></l>
+<l><num>1070</num> <s>next</s></l>
+<l><num>1100</num> <s><w>print</w></s><pc>:</pc><s><w>print</w>tab(6)"U{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}I"</s></l>
+<l><num>1110</num> <s><w>print</w>tab(6)"{SHIFT--}         {SHIFT--}"</s></l>
+<l><num>1120</num> <s><w>print</w>tab(6)"J{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}K"</s></l>
+<l><num>1150</num> <s><w>poke</w>214,21</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>" </s><s>RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"</s></l>
+<l><num>1160</num> <s><w>print</w>" **************************************"</s></l>
+<l><num>1200</num> <s><w>poke</w>214,1</s><pc>:</pc><s><w>print</w></s></l>
+<l><num>1210</num> <s>fori=1to16</s><pc>:</pc><s><w>print</w>tab(22)"{rvon}{CBM-K}{rvof} </s><s>  {CBM-K}{rvon}{CBM-K}{rvof}   {CBM-K}"</s></l>
+<l><num>1220</num> <s>next</s></l>
+<l><num>1230</num> <s><w>print</w>tab(21)"{rvon}------------"</s></l>
+<l><num>1235</num> <s><w>print</w>tab(26-len(n$)/2)"{rvon} ";</s><pc>:</pc><s>fori=1to10</s><pc>:</pc><s><w>print</w>mid$(n$,i,1);</s><pc>:</pc><s>next</s><pc>:</pc><s><w>print</w>"{rvon} </s><s>"</s></l>
+<l><num>1240</num> <s><w>poke</w>214,2</s><pc>:</pc><s><w>print</w></s></l>
+<l><num>1250</num> <s>fori=1to7</s><pc>:</pc><s><w>print</w>tab(24)r$(i);tab(29)f$(i)</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s>next</s></l>
+<l><num>1300</num> <s><w>poke</w>214,5</s><pc>:</pc><s><w>print</w></s></l>
+<l><num>1310</num> <s><w>print</w>tab(33)"{rvon} note "</s></l>
+<l><num>1350</num> <s><w>print</w></s><pc>:</pc><s><w>print</w>tab(33)"U{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}I</s></l>
+<l><num>1360</num> <s>fori=1to3</s><pc>:</pc><s><w>print</w>tab(33)"{SHIFT--} </s><s>   {SHIFT--}"</s><pc>:</pc><s>next</s></l>
+<l><num>1370</num> <s><w>print</w>tab(33)"J{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}K</s></l>
+<l><num>1400</num> <s><w>return</w></s></l>
+<l><num>2000</num> <s><w>print</w>"{clr}{down}{down}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}";</s><pc>:</pc><s><w>poke</w>32768,76</s></l>
+<l><num>2010</num> <s>open1,1,0,"vokabeln"</s></l>
+<l><num>2015</num> <s>input#1,n$</s></l>
+<l><num>2020</num> <s>fori=1to50</s></l>
+<l><num>2030</num> <s>input#1,v$(i,1)</s></l>
+<l><num>2031</num> <s>input#1,v$(i,2)</s></l>
+<l><num>2032</num> <s>input#1,v$(i,3)</s></l>
+<l><num>2033</num> <s>input#1,v$(i,4)</s></l>
+<l><num>2040</num> <s><w>print</w>i</s><pc>:</pc><s>next</s></l>
+<l><num>2050</num> <s>close1</s></l>
+<l><num>2060</num> <s><w>return</w>                              </s>:</l>
+<l><num>2500</num> <s>sys32768</s><pc>:</pc><s><w>print</w>"{clr}"</s></l>
+<l><num>2505</num> <s>input"name des programms             _{left}{left}{left}{left}{left}{left}{left}{left}{left}{left}{left}{left}{left}";n$</s><pc>:</pc><s><w>print</w></s></l>
+<l><num>2507</num> <s>n$=left$(n$,10)</s></l>
+<l><num>2508</num> <s><w>print</w>"{down}{down}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rvon}  "n$"  {down}{down}"</s></l>
+<l><num>2510</num> <s>open1,1,1,"vokabeln"</s></l>
+<l><num>2515</num> <s><w>print</w>#1,n$</s></l>
+<l><num>2520</num> <s>fori=1to50</s></l>
+<l><num>2530</num> <s><w>print</w>#1,v$(i,1)</s></l>
+<l><num>2531</num> <s><w>print</w>#1,v$(i,2)</s></l>
+<l><num>2532</num> <s><w>print</w>#1,v$(i,3)</s></l>
+<l><num>2533</num> <s><w>print</w>#1,v$(i,4)</s></l>
+<l><num>2540</num> <s>next</s></l>
+<l><num>2550</num> <s>close1</s></l>
+<l><num>2560</num> <s><w>return</w>                              </s>:</l>
+<l><num>3000</num> <s><w>rem</w></s></l>
+<l><num>3010</num> <s>fori=1to7</s><pc>:</pc><s>readj$,k$</s><pc>:</pc><s>r$(i)=j$</s><pc>:</pc><s>f$(i)=k$</s><pc>:</pc><s>next</s></l>
+<l><num>3100</num> <s>fori=0to9</s><pc>:</pc><s>readj</s><pc>:</pc><s>n(i)=j</s><pc>:</pc><s>next</s></l>
+<l><num>3120</num> <s>fori=1to3</s><pc>:</pc><s>readj</s><pc>:</pc><s>f(i)=j</s><pc>:</pc><s>next</s></l>
+<l><num>3140</num> <s>fori=1to3</s><pc>:</pc><s>readj</s><pc>:</pc><s>r(i)=j</s><pc>:</pc><s>next</s></l>
+<l><num>3200</num> <s><w>return</w></s></l>
+<l><num>3500</num> <s>fori=1to50</s></l>
+<l><num>3510</num> <s><w>print</w>"{clr}"</s></l>
+<l><num>3520</num> <s><w>print</w></s><pc>:</pc><s><w>print</w>tab(5)"{rvon} </s><s>eingeben neuer vokabeln ! "i"{left}  "</s></l>
+<l><num>3530</num> <s><w>poke</w>214,4</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w></s></l>
+<l><num>3540</num> <s>input"vokabel </s><pc>:</pc><s>";v$(i,1)</s></l>
+<l><num>3560</num> <s>ifv$(i,1)=""thengosub4400</s><pc>:</pc><s><w>return</w></s></l>
+<l><num>3565</num> <s>iflen(v$(i,1))>15then3530</s></l>
+<l><num>3570</num> <s>forj=2to4</s></l>
+<l><num>3580</num> <s><w>poke</w>214,2+3*j</s><pc>:</pc><s><w>print</w> </s><s>                                     "</s></l>
+<l><num>3590</num> <s>input"bedeutung </s><pc>:</pc><s>";v$(i,j)</s></l>
+<l><num>3600</num> <s>ifv$(i,j)=""thenv$(i,j)="*"</s></l>
+<l><num>3610</num> <s>iflen(v$(i,j))>15then3580</s></l>
+<l><num>3620</num> <s>next</s><pc>:</pc><s>next</s></l>
+<l><num>3700</num> <s><w>return</w></s></l>
+<l><num>4000</num> <s>fori=1to50</s></l>
+<l><num>4010</num> <s><w>print</w>"{clr}"</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>tab(5)"{rvon} </s><s>verbessern von vokabeln ! "i"{left}  "</s></l>
+<l><num>4015</num> <s><w>print</w></s><pc>:</pc><s><w>print</w>" </s><s>       ( {rvon}n{rvof}ext  or  {rvon}c{rvof}orrect )</s></l>
+<l><num>4020</num> <s><w>poke</w>214,6</s><pc>:</pc><s><w>print</w></s><pc>:</pc><s><w>print</w>tab(10)v$(i,1)</s></l>
+<l><num>4030</num> <s>geta$</s><pc>:</pc><s>ifa$=""then4030</s></l>
+<l><num>4040</num> <s>ifa$="n"thennext</s><pc>:</pc><s><w>return</w></s></l>
+<l><num>4050</num> <s>ifa$&lt;>"c"then4030</s></l>
+<l><num>4060</num> <s><w>poke</w>214,11</s><pc>:</pc><s><w>print</w></s></l>
+<l><num>4070</num> <s>forj=1to4</s><pc>:</pc><s><w>print</w>v$(i,j),</s><pc>:</pc><s>input"v</s><pc>:</pc><s> </s><s>";v$(i,j)</s></l>
+<l><num>4080</num> <s>next</s><pc>:</pc><s>next</s></l>
+<l><num>4100</num> <s><w>return</w></s></l>
+<l><num>4300</num> <s><w>return</w></s></l>
+<l><num>4400</num> <s><w>print</w>"{clr}{down}{down}{down}      a little moment, please !"</s></l>
+<l><num>4450</num> <s>fork=ito50</s><pc>:</pc><s>forj=1to4</s><pc>:</pc><s>v$(k,j)="*"</s><pc>:</pc><s>next</s><pc>:</pc><s>next</s><pc>:</pc><s><w>return</w></s></l>
+<l><num>4500</num> <s>datar,f,i,a,c,l,h,s,t,c,i,h,g,*</s></l>
+<l><num>4600</num> <s>data3,7,9,13,17,19,21,47,41,37</s></l>
+<l><num>4700</num> <s>data121,248,160,121,248,160</s></l>
+<l><num>5000</num> <s><w>print</w>"{lblu}{clr}{down}{down}{down}"</s></l>
+<l><num>5010</num> <s><w>print</w>" pressU{SHIFT-*}{SHIFT-*}{SHIFT-*}IU{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}I</s></l>
+<l><num>5020</num> <s>fori=1to12</s></l>
+<l><num>5030</num> <s><w>print</w>"      {SHIFT--}   {SHIFT--}{SHIFT--}                      {SHIFT--}</s></l>
+<l><num>5040</num> <s>next</s></l>
+<l><num>5050</num> <s><w>print</w>"      J{SHIFT-*}{SHIFT-*}{SHIFT-*}KJ{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}K</s></l>
+<l><num>5060</num> <s><w>poke</w>214,5</s><pc>:</pc><s><w>print</w></s></l>
+<l><num>5070</num> <s><w>print</w>tab(8)"y"tab(13)"to start"</s></l>
+<l><num>5080</num> <s><w>print</w>tab(8)"{down}{down}c"tab(13)"to correct"</s></l>
+<l><num>5090</num> <s><w>print</w>tab(8)"{down}{down}s"tab(13)"to save the words"</s></l>
+<l><num>5100</num> <s><w>print</w>tab(8)"{down}{down}l"tab(13)"to load in new words"</s></l>
+<l><num>5200</num> <s><w>return</w></s></l>
+<l><num>5500</num> <s><w>print</w>"{clr}{down}{down}"</s></l>
+<l><num>5510</num> <s>v$="copyright by michael schmidt </s><pc>:</pc><s>"</s></l>
+<l><num>5520</num> <s><w>print</w>tab(4);</s><pc>:</pc><s>fori=1tolen(v$)</s></l>
+<l><num>5530</num> <s><w>print</w>mid$(v$,i,1);</s><pc>:</pc><s>forj=1to100</s><pc>:</pc><s>next</s><pc>:</pc><s>next</s><pc>:</pc><s><w>print</w></s></l>
+<l><num>5535</num> <s>fori=1to500</s><pc>:</pc><s>next</s></l>
+<l><num>5540</num> <s><w>print</w>"{down}    U{SHIFT-*}{SHIFT-*}{SHIFT-*}I"</s></l>
+<l><num>5550</num> <s><w>print</w>"    {SHIFT--}   {SHIFT--}"</s></l>
+<l><num>5560</num> <s><w>print</w>" UI {SHIFT--} U{SHIFT-*}K                            UI"</s></l>
+<l><num>5570</num> <s><w>print</w>"UKJI{SHIFT--}{$a0}J{SHIFT-*}IUIUIU{SHIFT-*}{SHIFT-*}IU{SHIFT-*}{SHIFT-*}I{CBM-A}{SHIFT-*}IUIUIU{SHIFT-*}{SHIFT-*}IU{SHIFT-*}{SHIFT-*}IUKJI";</s></l>
+<l><num>5580</num> <s><w>print</w>"JIUKJ{SHIFT-*}I{$a0}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}UI{SHIFT--}{SHIFT--}WW{SHIFT--}{SHIFT--}UK{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}UI{SHIFT--}{SHIFT--}U{SHIFT-*}KJIUK";</s></l>
+<l><num>5590</num> <s><w>print</w>" JK U{SHIFT-*}K{$a0}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}U{SHIFT-*}K{SHIFT--}{SHIFT--}{$a0}{SHIFT--}JK{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}{SHIFT--}   JK"</s></l>
+<l><num>5600</num> <s><w>print</w>"    {SHIFT--}{$a0}{$a0}{$a0}{SHIFT--}{SHIFT--}JK{SHIFT--}{SHIFT--}JK{SHIFT--}{SHIFT--}J{SHIFT-*}I{SHIFT--}{SHIFT--}{$a0}JIUK{SHIFT--}JK{SHIFT--}{SHIFT--}J{SHIFT-*}I"</s></l>
+<l><num>5610</num> <s><w>print</w>"    J{SHIFT-*}{SHIFT-*}{SHIFT-*}KJ{SHIFT-*}{SHIFT-*}K{SHIFT--}U{SHIFT-*}KJ{SHIFT-*}{SHIFT-*}KJK  JK J{SHIFT-*}{SHIFT-*}KJ{SHIFT-*}{SHIFT-*}K"</s></l>
+<l><num>5620</num> <s><w>print</w>"             {SHIFT--}{SHIFT--}"</s></l>
+<l><num>5630</num> <s><w>print</w>"             {SHIFT--}{SHIFT--} badische 64'er"</s></l>
+<l><num>5635</num> <s><w>print</w>"             JK"</s></l>
+<l><num>5640</num> <s><w>print</w>" U{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}I</s></l>
+<l><num>5650</num> <s><w>print</w>" {SHIFT--} ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ {SHIFT--}</s></l>
+<l><num>5660</num> <s><w>print</w>" J{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}{SHIFT-*}K"</s></l>
+<l><num>5670</num> <s><w>print</w>"{down}{down}{down}{rght}{rght}{rght}{rght}{rght}*** press any key to start ***"</s></l>
+<l><num>5680</num> <s><w>return</w></s></l>
+</body>
+</text>
+</TEI>
