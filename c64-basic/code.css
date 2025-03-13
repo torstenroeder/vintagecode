@@ -1,17 +1,25 @@
-ab { display:block; color:black; font-family:courier, fixed, monospace; }
-
-num { color:magenta; }
-num[type="ln"] { color:purple; }
-seg[type="instruction"] { color:black; }
-seg[type="command"] { color:blue; }
-seg[type="argument"] { color:orange; }
-seg[type="call"] { color:black; }
-seg[type="function"] { color:green; }
-seg[type="parameters"] { color:orange; }
-pc[type="operator"] { color:red; }
-pc[type="separator"] { color:purple; }
-
-l { display:block; }
-s { color:green; }
+TEI {
+	display:block;
+	background-color:black;
+	font-family:courier, fixed, monospace;
+	color:white;
+	padding:0.5em;
+}
+teiHeader {
+	display:block;
+	background-color:blue;
+}
+teiHeader * {
+	display:block;
+	-oxy-display-tags:none;
+}
+text, body {
+	display:block;
+}
+l { display:inline-block; -oxy-display-tags:none; }
+num,s,w,pc { display:inline; -oxy-display-tags:none; }
+num { color:lightblue; }
+s { color:lightgreen; }
 w { color:orange; }
-num { color:blue; }
+lb { -oxy-display-tags:none; display:inline; }
+lb::after { content:"\a"; }

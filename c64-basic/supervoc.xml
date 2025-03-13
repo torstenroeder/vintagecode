@@ -4,7 +4,8 @@
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
-				<title>Title</title>
+				<title>Supervoc</title>
+				<author>Michael Schmidt</author>
 				<principal>Torsten Roeder</principal>
 			</titleStmt>
 			<publicationStmt>
@@ -17,11 +18,16 @@
 	</teiHeader>
 <text xml:space="preserve">
 <body>
-<l><num>0</num> <s><w>rem</w> ********************************* *****              **              *****</s></l>
-<l><num>1</num> <s><w>rem</w> * michael schmidt * 1984 * msc. *      ****                      ****</s></l>
-<l><num>2</num> <s><w>rem</w> *  b a d i s c h e   6 4 ' e r  *    **     ******* msc. *******     **</s></l>
-<l><num>3</num> <s><w>rem</w> *   supervoc.   * commodore 64  *      ****                      ****</s></l>
-<l><num>4</num> <s><w>rem</w> ********************************* *****  badische    ** 64'er  1984  *****</s></l>
+<l><num>0</num> <s><w>rem</w> *********************************
+<lb/>*****              **              *****</s></l>
+<l><num>1</num> <s><w>rem</w> * michael schmidt * 1984 * msc. *
+<lb/>      ****                      ****</s></l>
+<l><num>2</num> <s><w>rem</w> *  b a d i s c h e   6 4 ' e r  *
+<lb/>    **     ******* msc. *******     **</s></l>
+<l><num>3</num> <s><w>rem</w> *   supervoc.   * commodore 64  *
+<lb/>      ****                      ****</s></l>
+<l><num>4</num> <s><w>rem</w> *********************************
+<lb/>*****  badische    ** 64'er  1984  *****</s></l>
 <l><num>10</num> <s><w>gosub</w>5500</s><pc>:</pc><s><w>poke</w>198,0</s><pc>:</pc><s>wait198,1</s></l>
 <l><num>15</num> <s><w>poke</w>32768,96</s><pc>:</pc><s><w>poke</w>650,234</s></l>
 <l><num>20</num> <s>dimv$(50,4)</s><pc>:</pc><s>pf=1732</s><pc>:</pc><s>pr=1727</s><pc>:</pc><s>sy=1</s></l>

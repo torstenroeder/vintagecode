@@ -1,0 +1,70 @@
+1000 goto1510
+1010 c=int(bl/5):x=(bl/5-c+1e-3)*40:y=c*12:ondgoto1040
+1020 x=x+1:y=y+1:fort=0to8:sysv,x,y+t,"FFFFFF":next
+1030 sysv,x+1,y+4," "str$(bl)" ":return
+1040 sysv,x,y,"LBBBBBB.":fort=1to9
+1050 sysv,x,y+t,"rA      RA":next:sysv,x,y+10,".rBBBBBBR."
+1060 b=kk(bl):c=1-len(k$(b,2)):a$=k$(b,2):b$=k$(b,3)
+1070 sysv,x+1,y+1,"r"a$;:sysv,x+6+c,y+1,a$;:sysv,x+1,y+2,b$"    "b$;
+1080 sysv,x+3,y+5,b$b$;:sysv,x+1,y+8,b$"    "b$;
+1090 sysv,x+1,y+9,a$;:sysv,x+6+c,y+9,a$"R":return
+1100 ifz>=32thengosub1320:z=1
+1110 n=int(rnd(1)*(e+1)):kk(n)=k(z):z=z+1:bl=n
+1120 d=1:gosub1010:fors=0tom:next:d=0:gosub1010:return
+1130 n=1-int(rnd(1)+.3):onngoto1150
+1140 n=int(rnd(1)*32+1):goto1160
+1150 n=int(rnd(1)*(e+1)):n=kk(n)
+1160 b$="die":a$=k$(n,2):ifa$="a"thenb$="das"
+1170 ifa$="k"ora$="b"thenb$="der"
+1180 sysv,0,11,"r wo ist "b$" "k$(n,1);" "k$(n,0)" 0-9 oder n ":return
+1190 fors=0toe:ifkk(s)<>nthennext:bl=e:goto1600
+1200 gosub1310:sysv,11,11,"r falsch R":gosub1300
+1210 sysv,0,11,"r sie haben "str$(p)" fragen bestanden R"
+1220 ifp=1thenpoke1483,160
+1230 d=1:forbl=0toe:gosub1010:next
+1240 gosub1300:sysv,5,11,"r ein neues spiel (j/n) R"
+1250 geta$:ifa$=""then1250
+1260 ifa$<>"j"anda$<>"n"then1250
+1270 ifa$="j"thengosub1310:goto1520
+1280 gosub1310:sysv,10,11,"rschade":gosub1300
+1290 print"S":end
+1300 fors=0to2000:next
+1310 fors=0to34:poke1464+s,160:next:return
+1320 fort=1to32:k(t)=t:next:fort=0to100
+1330 a=int(rnd(1)*32+1):b=int(rnd(1)*32+1)
+1340 c=k(a):k(a)=k(b):k(b)=c:next:return
+1350 print"Se":poke53280,5:poke53281,5
+1360 sysv,13,4,"r grips R":sysv,3,7,"mit wieviel karten wollen"
+1370 input"qq]]]wir spielen (3-10) ";e
+1380 input"qq]]]schwierigkeitsgrad (1-5) ";m
+1390 ife<3ore>10orm<1orm>5then1350
+1400 e=e-1:m=(6-m)*1000:print"S":return
+1410 dimk$(32,3),k(32):v=49152:p=0:b=0:a=rnd(-ti)
+1420 fort=vtov+25:reada:poket,a:b=b+a:next
+1430 ifb<>3566thenprint"q]fehler in data-zeilen":end
+1440 fors=1to32step4:reada$,b$:fort=0to3:k$(s+t,0)=a$
+1450 k$(s+t,2)=b$:next:next:fors=0to3:reada$,b$
+1460 fort=1to32step4:k$(s+t,1)=a$:k$(s+t,3)=b$:next:next:return
+1470 data 32,253,174,32,158,183,138,72,32,253,174,32,158,183
+1480 data 104,168,24,32,240,255,32,253,174,76,164,170
+1490 data sieben,7,acht,8,neun,9,zehn,10,bube,b,dame,d
+1500 data koenig,k,as,a,karo,"Z",herz,"S",pik,"A",kreuz,"X"
+1510 gosub1410:gosub1350:sysv,5,11,"res geht los R"
+1520 gosub1320:fort=0toe:kk(t)=k(t+1):next:z=e+2:p=0:gosub1300
+1530 forbl=0toe:d=1:gosub1010:d=0:gosub1010:next
+1535 fort=1499to1503:poket,32:next
+1540 sysv,35,11,str$(p):sysv,5,11,"r achtung ! karten merken R"
+1550 fors=0tom:next:forbl=0toe:gosub1120:next:gosub1310
+1560 forl=0to3:gosub1130
+1570 geta$:ifa$=""then1570
+1580 ifa$="n"then1190
+1590 ifkk(val(a$))<>nthen1200
+1600 gosub1310:sysv,11,11,"r richtig R":p=p+1:sysv,35,11,str$(p)
+1610 gosub1300:gosub1310:next:l=int(rnd(1)+.5):onlgoto1640
+1620 sysv,0,11,"rich tausche jetzt eine karte aus R":gosub1300
+1630 gosub1100:gosub1300:gosub1310:goto1560
+1640 a=int(rnd(1)*(e+1)):b=int(rnd(1)*(e+1)):c=kk(a):d=kk(b)
+1650 ifa=bthen1640
+1660 sysv,7,11,"rich vertausche jetztR":gosub1300
+1670 sysv,4,11,"r"k$(c,1)" "k$(c,0)" mit "k$(d,1)" "k$(d,0)
+1680 gosub1300:c=kk(a):kk(a)=kk(b):kk(b)=c:goto1560

@@ -70,7 +70,7 @@
 <l><num>991</num> <s><w>rem</w> ** zufallstextgeneration **</s></l>
 <l><num>992</num> <s><w>rem</w> ***************************</s></l>
 <l><num>1000</num> <s><w>print</w>"{clr}{down}{down}{down}{down}{rght}{rght}bitte geschwindigkeit waehlen"</s></l>
-<l><num>1010</num> <s>input"{down}{rght}{rght}(in worten pro minute) ";g</s></l>
+<l><num>1010</num> <s><w>input</w>"{down}{rght}{rght}(in worten pro minute) ";g</s></l>
 <l><num>1020</num> <s>m$=""</s><pc>:</pc><s>fori=1to40</s><pc>:</pc><s>m$=m$+" </s><s>"</s><pc>:</pc><s>forj=1to5</s></l>
 <l><num>1030</num> <s>a=int(65*rnd(1))+34</s><pc>:</pc><s>ifm$(a)=""then1030</s></l>
 <l><num>1040</num> <s>m$=m$+chr$(a)</s><pc>:</pc><s>nextj,i</s></l>
